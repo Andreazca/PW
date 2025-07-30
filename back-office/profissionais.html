@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <!-- Configurações básicas da página -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profissionais em Ação</title>
+  <!-- Link para o arquivo de estilos -->
+  <link rel="stylesheet" href="profissionais.css" />
+  <link rel="icon" type="image/svg+xml" href="dashboard.svg" />
+</head>
+<body>
+
+  <header></header>
+  
+ <!-- Menu lateral -->
+<div class="sidebar">
+    
+  <h2>EYESEVERYWHERE</h2> <!-- Título da barra lateral -->
+  <!-- Secção "Main" -->
+  <div class="section-title">Main</div>
+  <ul>
+    <!-- Item do menu com submenu (Dashboard) -->
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropdown-btn">
+        <img src="dashboard.svg" alt="dashboard" class="icon" /> Dashboard
+        <img src="seta.svg" alt="seta" class="arrow"></a>
+      <ul class="submenu">
+        <!-- Subitens do Dashboard -->
+        <li><a href="auditoriasarea.html">Auditorias</a></li>
+        <li><a href="num_ocorrencias.html">Ocorrências</a></li>
+        <li><a href="profissionais.html">Profissionais</a></li>
+        <li><a href="materiaisutilizados.html">Materiais</a></li>
+      </ul>
+    </li>
+
+      <!-- Item do menu com submenu (Auditorias) -->
+      <li class="dropdown">
+        <a href="javascript:void(0)" class="dropdown-btn">
+          <img src="Auditorias.svg" alt="auditorias" class="icon" /> Auditorias
+          <img src="seta.svg" alt="seta" class="arrow"></a>
+        <ul class="submenu">
+          <!-- Subitens de Auditorias -->
+          <li><a href="listaauditorias.html">Lista: Auditorias</a></li>
+          <li><a href="criarauditoria.html">Criar Auditoria</a></li>
+        </ul>
+      </li>
+
+      <!-- Secção "Interface" -->
+      <div class="section-title">Interface</div>
+      <ul>
+        <!-- Item do menu com submenu (Pedidos) -->
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropdown-btn"> 
+            <img src="Pedidos.svg" alt="pedidos" class="icon" /> Pedidos
+            <img src="seta.svg" alt="seta" class="arrow"></a>
+          <ul class="submenu">
+            <!-- Subitens de Pedidos -->
+            <li><a href="listaocorrencias.html">Lista: Ocorrências</a></li>
+            <li><a href="pedidospendentes.html">Pedidos Pendentes</a></li>
+            <li><a href="auditoriasemprogresso.html">Em Progresso</a></li>
+          </ul>
+        </li>
+        <!-- Item do menu (Peritos) -->   
+        <li>
+          <a href="registoperitos.html">
+            <img src="Peritos.svg" alt="peritos" class="icon" /> Peritos</a>
+        </li>
+        <!-- Item do menu com submenu (Materiais) -->
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropdown-btn">
+            <img src="Materiais.svg" alt="materiais" class="icon" /> Materiais
+            <img src="seta.svg" alt="seta" class="arrow">
+          </a>
+          <ul class="submenu">
+            <li><a href="listamateriais.html">Lista: Materiais</a></li>
+          </ul>
+        </li>
+        <!-- Outros itens do menu -->
+        <li><a href="custos.html">
+          <img src="Custos.svg" alt="custos" class="icon" /> Custos</a>
+        </li>
+        <li><a href="calendario.html">
+          <img src="Calendario.svg" alt="calendario" class="icon" /> Calendário</a>
+        </li>
+      </ul>
+    </ul>
+  </div>
+
+  <div class="main-content">
+    <div class="page-title">Profissionais Disponíveis em Ação</div>
+    
+    <div class="dashboard-container">
+      <!-- GRÁFICO PIZZA-->
+      
+        <div class="graphs">
+          <div class="graph-card" id="">
+            <div class="title-row">Profissionais em Ação</div>
+            <canvas id="graficoPizza"></canvas>
+          </div>
+      
+          <!--GRÁFICO BARRAS HORIZONTAL-->
+     
+        <div class="graph-card">
+          <div class="title-row">Profissionais em Auditoria</div>
+          <canvas id="graficoBarras"></canvas>
+        </div>
+      </div>
+      
+      <div class="form-container">
+        <table id="tabela">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Disponibilidade</th>
+                <th>Atividade Atual</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- JS vai preencher aqui -->
+            </tbody>
+          </table>
+        <!-- tabela -->
+        <div class="pagination" id="paginacao"></div>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="profissionais.js"></script>
+</body>
+</html>

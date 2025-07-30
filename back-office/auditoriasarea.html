@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Auditorias Realizadas por Área</title>
+  <link rel="stylesheet" href="auditoriasparea.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- dashboard.svg como favicon -->
+  <link rel="icon" type="image/svg+xml" href="dashboard.svg" />
+</head>
+<body>
+
+  <header></header>
+
+  <!-- Sidebar fora do conteúdo principal -->
+  <div class="sidebar">
+    <h2>EYESEVERYWHERE</h2>
+    <div class="section-title">Main</div>
+    <ul>
+      <li class="dropdown">
+        <a href="javascript:void(0)" class="dropdown-btn">
+          <img src="dashboard.svg" alt="dashboard" class="icon" /> Dashboard
+          <img src="seta.svg" alt="seta" class="arrow">
+        </a>
+        <ul class="submenu">
+          <li><a href="auditoriasarea.html">Auditorias</a></li>
+          <li><a href="num_ocorrencias.html">Ocorrências</a></li>
+          <li><a href="profissionais.html">Profissionais</a></li>
+          <li><a href="materiaisutilizados.html">Materiais</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="javascript:void(0)" class="dropdown-btn">
+          <img src="Auditorias.svg" alt="auditorias" class="icon" /> Auditorias
+          <img src="seta.svg" alt="seta" class="arrow">
+        </a>
+        <ul class="submenu">
+          <li><a href="listaauditorias.html">Lista: Auditorias</a></li>
+          <li><a href="criarauditoria.html">Criar Auditoria</a></li>
+          <li><a href="auditoriasemprogresso.html">Em Progresso</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="section-title">Interface</div>
+    <ul>
+      <li class="dropdown">
+        <a href="javascript:void(0)" class="dropdown-btn">
+          <img src="Pedidos.svg" alt="pedidos" class="icon" /> Pedidos
+          <img src="seta.svg" alt="seta" class="arrow">
+        </a>
+        <ul class="submenu">
+          <li><a href="listaocorrencias.html">Lista: Ocorrências</a></li>
+          <li><a href="pedidospendentes.html">Pedidos Pendentes</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="registoperitos.html">
+          <img src="Peritos.svg" alt="peritos" class="icon" /> Peritos
+        </a>
+      </li>
+      <li class="dropdown">
+        <a href="javascript:void(0)" class="dropdown-btn">
+          <img src="Materiais.svg" alt="materiais" class="icon" /> Materiais
+          <img src="seta.svg" alt="seta" class="arrow">
+        </a>
+        <ul class="submenu">
+          <li><a href="listamateriais.html">Lista: Materiais</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="custos.html">
+          <img src="Custos.svg" alt="custos" class="icon" /> Custos
+        </a>
+      </li>
+      <li>
+        <a href="calendario.html">
+          <img src="Calendario.svg" alt="calendario" class="icon" /> Calendário
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Conteúdo principal -->
+  <div class="main-content">
+    <div class="dashboard-container">
+      <div class="page-title">Auditorias Realizadas por Área</div>
+      <div class="metric-cards">
+        <div class="metric-card">
+          <span class="numero" style="background:#f2762e;">1</span>
+          <h4>Monitorização de Equipamentos Industriais</h4>
+        </div>
+        <div class="metric-card">
+          <span class="numero" style="background:#009de0;">2</span>
+          <h4>Auditoria da Segurança no Trabalho</h4>
+        </div>
+        <div class="metric-card">
+          <span class="numero" style="background:#3da100;">3</span>
+          <h4>Gestão de Inspeções Periódicas</h4>
+        </div>
+      </div>
+      <div class="graph-section">
+        <div class="graph-bar">
+          <canvas id="graficoAuditorias"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Script para funcionalidades da página -->
+  <script src="auditoriasparea.js"></script>
+</body>
+</html>

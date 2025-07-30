@@ -1,0 +1,321 @@
+/* Define o box-sizing para incluir padding e bordas no tamanho total dos elementos */
+* {
+  box-sizing: border-box;
+}
+
+/* Estilo geral do corpo da página */
+body {
+  margin: 0; /* Remove margens padrão */
+  font-family: 'Segoe UI', sans-serif; /* Define a fonte padrão */
+  background-color: #e8e1d2; /* Define a cor de fundo */
+  display: flex; /* Usa flexbox para layout */
+  height: 100vh; /* Define a altura total da janela */
+  overflow-x: hidden; /* Impede rolagem horizontal */
+  overflow-y: auto; /* Permite rolagem vertical */
+}
+
+/* Cabeçalho fixo no topo da página */
+header {
+  width: 100vw; /* Ocupa toda a largura da janela */
+  background-color: #1a3d63; /* Cor de fundo do cabeçalho */
+  padding: 14px 30px; /* Espaçamento interno */
+  min-height: 60px; /* Define uma altura mínima */
+  color: white; /* Cor do texto */
+  display: flex; /* Usa flexbox para alinhamento */
+  justify-content: flex-end; /* Alinha o conteúdo à direita */
+  align-items: center; /* Centraliza verticalmente */
+  position: fixed; /* Fixa o cabeçalho no topo */
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Garante que o cabeçalho fique acima de outros elementos */
+}
+
+/* Sidebar igual à do num_ocorrencias */
+.sidebar {
+  width: 300px;
+  background-color: #1a3d63;
+  color: white;
+  height: calc(100vh - 80px);
+  margin-top: 80px;
+  padding: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  flex-shrink: 0;
+  max-height: 100vh;
+  overflow-y: auto;
+}
+
+/* Título principal do menu lateral */
+.sidebar h2 {
+  font-size: 18px;
+  margin-bottom: 70px;
+  text-align: center;
+}
+
+/* Títulos das seções no menu lateral */
+.sidebar .section-title {
+  font-size: 12px;
+  color: #b0b0b0;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+/* Lista de itens do menu */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Estilo dos itens do menu */
+.sidebar ul li {
+  margin-bottom: 15px;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Links dentro do menu */
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  padding: 5px 10px;
+  width: 100%;
+}
+
+/* Ícones dentro dos links */
+.icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+/* Seta para dropdown */
+.sidebar ul li a .arrow {
+  margin-left: auto;
+  font-size: 16px;
+  display: inline-block;
+  align-self: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Efeito ao passar o mouse nos links */
+.sidebar ul li a:hover {
+  text-decoration: underline;
+}
+
+.dropdown-btn:hover .arrow {
+  transform: rotate(180deg); /* Rotaciona a seta ao passar o mouse */
+}
+
+
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+.dropdown-btn:hover .arrow {
+  transform: rotate(180deg);
+}
+
+.main-content {
+  max-width: none;
+  margin: 0 auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  box-sizing: border-box;
+  align-items: stretch;
+  background: #e8e1d2;
+}
+
+.page-title {
+  font-size: 34px;
+  color: #1a3d63;
+  font-weight: bold;
+  padding-top: 40px;
+  padding-bottom: 20px;
+  text-align: left;
+  margin: 0 auto 0 auto;
+  max-width: 1160px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Agora OCCORRENCIAS! */
+.ocorrencias-container {
+   background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.10);
+  max-width: 1160px;           /* mantém limite de largura */
+  width: 100%;
+  min-width: 320px;
+  margin: 15px auto 0 auto;    /* centralizado com margem superior */
+  padding: 30px;               /* espaçamento interno uniforme */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  box-sizing: border-box;
+  /* AJUSTES CRÍTICOS */
+  min-height: auto;           /* remove altura fixa */
+  height: auto;               /* adapta à quantidade de conteúdo */
+  max-height: 85vh;           /* altura máxima relativa à viewport */
+  overflow-y: auto;   
+}
+
+.ocorrencias-container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 16px;
+  background: transparent;
+  box-shadow: none;
+}
+
+.ocorrencias-container thead tr,
+.ocorrencias-container thead th {
+  background: #f9b300;
+  color: #1a3d63;
+  font-size: 18px;
+  padding: 9px 18px;
+  font-weight: bold;
+  border: none;
+  text-align: center;
+  letter-spacing: 0.5px;
+  border-bottom: 3px solid #ffb84d;
+  box-shadow: none;
+  line-height: 1.4;
+}
+
+.ocorrencias-container tr:hover td {
+  background: #fff3e0;
+}
+
+.header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.ocorrencias-container h2 {
+    color: #1a3d63;
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: left;
+  letter-spacing: 0.5px;
+  padding-left: 0;
+}
+
+
+/* Linha divisória acompanha o conteúdo interno */
+.divider {
+  border: none;
+  border-top: 4px solid #f9b300;
+  margin-bottom: 28px;
+  margin-top: 0;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+
+.ocorrencias-container td {
+  border-bottom: 1px solid #ccc;
+  padding: 12px; /* Para ficar igual ao pedidos */
+  text-align: center; /* Igual pedidos */
+}
+
+
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.search-container input[type="search"] {
+  padding: 8px 14px;
+  font-size: 16px;
+  height: 36px;
+  width: 220px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+/* BOTÃO COM IMAGEM INTEGRADA */
+.search-container span {
+  height: 36px;
+  width: 36px;
+  background-color: transparent; /* Sem fundo */
+  padding: 0;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* IMAGEM ocupa o botão todo */
+.search-container img#searchBtn {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  border-radius: 6px;
+  transition: transform 0.2s ease;
+}
+
+
+/* Mensagem quando vazio */
+#tabelaOcorrencias .tabela-vazia {
+  text-align: center;
+  color: #1a3d63;
+  font-size: 18px;
+  font-weight: normal;
+  padding: 20px 0 0 0;
+  letter-spacing: 0.5px;
+  background: none;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  opacity: 0.85;
+}
+
+#tabelaOcorrencias tr:hover .tabela-vazia {
+  background: none;
+}
+
+/* Paginação */
+.pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.pagination button {
+  padding: 8px 12px;
+  border: none;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.pagination button.active {
+  background-color: #1a3d63;
+  color: white;
+}
+
+

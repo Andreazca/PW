@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+  <header class="dashboard-header">
+    <div class="logo">
+      <img src="images/logo-eyeseverywhere.png" alt="EyesEverywhere" class="logo-img">
+    </div>
+    <nav>
+      <a href="landingpage.html">Página Inicial</a>
+      <button onclick="logout()" class="logout-button">Logout</button>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Bem-Vindo | Painel de Controlo</h1>
+    <div class="dashboard-buttons">
+      <button onclick="openOccurrenceModal()">Submeter Ocorrência</button>
+      <button onclick="showOccurrenceView()">Visualizar Ocorrências</button>
+    </div>
+  </main>
+
+  <!-- Modal de Submissão de Ocorrência -->
+  <div class="modern-modal" id="ocorrenciaModal">
+    <div class="modern-modal-content">
+      <button class="modern-close" onclick="closeOccurrenceModal()" aria-label="Fechar">&times;</button>
+      <h2>Submeter Ocorrência</h2>
+      <form class="modern-form" onsubmit="event.preventDefault(); submitOccurrence();">
+        <div class="modern-form-row">
+          <div class="modern-input-group">
+            <input type="text" placeholder="Tipo de problema" required>
+          </div>
+          <div class="modern-input-group">
+            <input type="text" placeholder="Local (Morada + Código Postal)" required>
+          </div>
+        </div>
+        <div class="modern-form-row">
+          <div class="modern-input-group">
+            <input type="tel" placeholder="Telemóvel" required>
+          </div>
+          <div class="modern-input-group">
+            <input type="email" placeholder="Email" required>
+          </div>
+        </div>
+        <div class="modern-input-group full-width">
+          <textarea placeholder="Descrição, imagens e documentos anexos." required></textarea>
+        </div>
+        <label class="modern-file-label">
+          <input type="file" style="display:none;">
+          <span><i class="fa fa-paperclip"></i> Anexar ficheiro</span>
+        </label>
+        <button type="submit" class="modern-submit">Submeter</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal de Visualização de Ocorrências -->
+  <div class="modern-modal" id="visualizarOcorrenciasModal">
+    <div class="modern-modal-content">
+      <button class="modern-close" onclick="closeOccurrenceView()" aria-label="Fechar">&times;</button>
+      <h2>Visualizar Ocorrências</h2>
+      <div class="filter-buttons">
+        <button onclick="filterOccurrences('aceite')">ACEITE</button>
+        <button onclick="filterOccurrences('recusado')">RECUSADO</button>
+        <button onclick="filterOccurrences('pendente')">PENDENTE</button>
+        <button onclick="filterOccurrences('devolver')">DEVOLVIDO</button>
+      </div>
+      <div class="occurrence-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Descrição</th>
+              <th>Responsável</th>
+              <th>Data</th>
+              <th>Estado</th>
+              <th>Motivo</th>
+            </tr>
+          </thead>
+          <tbody id="occurrenceBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

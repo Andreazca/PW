@@ -1,0 +1,7 @@
+carolina@gmail.com,password1
+bernardo@gmail.com,password2
+andre@gmail.com,password3
+joao@gmail.com,password4
+lara@gmail.com,password5
+rodrigo@gmail.com,password6
+joao.alberto.martins03@gmail.com,google-auth 

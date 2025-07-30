@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pedidos Pendentes</title>
+  <link rel="stylesheet" href="pedidospendentes.css" />
+  <link rel="icon" type="image/svg+xml" href="Pedidos.svg" />
+</head>
+<body>
+
+  <header></header>
+  
+  <!-- Menu lateral -->
+  <div class="sidebar">
+    <h2>EYESEVERYWHERE</h2>
+    <div class="section-title">Main</div>
+    <ul>
+      <li class="dropdown">
+        <a href="javascript:void(0)" class="dropdown-btn">
+          <img src="dashboard.svg" alt="dashboard" class="icon" /> Dashboard
+          <img src="seta.svg" alt="seta" class="arrow">
+        </a>
+        <ul class="submenu">
+          <li><a href="auditoriasarea.html">Auditorias</a></li>
+          <li><a href="num_ocorrencias.html">Ocorrências</a></li>
+          <li><a href="profissionais.html">Profissionais</a></li>
+          <li><a href="materiaisutilizados.html">Materiais</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="javascript:void(0)" class="dropdown-btn">
+          <img src="Auditorias.svg" alt="auditorias" class="icon" /> Auditorias
+          <img src="seta.svg" alt="seta" class="arrow">
+        </a>
+        <ul class="submenu">
+          <li><a href="listaauditorias.html">Lista: Auditorias</a></li>
+          <li><a href="criarauditoria.html">Criar Auditoria</a></li>
+          <li><a href="auditoriasemprogresso.html">Em Progresso</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="section-title">Interface</div>
+    <ul>
+      <li class="dropdown">
+        <a href="javascript:void(0)" class="dropdown-btn">
+          <img src="Pedidos.svg" alt="pedidos" class="icon" /> Pedidos
+          <img src="seta.svg" alt="seta" class="arrow">
+        </a>
+        <ul class="submenu">
+          <li><a href="listaocorrencias.html">Lista: Ocorrências</a></li>
+          <li><a href="pedidospendentes.html">Pedidos Pendentes</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="registoperitos.html">
+          <img src="Peritos.svg" alt="peritos" class="icon" /> Peritos
+        </a>
+      </li>
+      <li class="dropdown">
+        <a href="javascript:void(0)" class="dropdown-btn">
+          <img src="Materiais.svg" alt="materiais" class="icon" /> Materiais
+          <img src="seta.svg" alt="seta" class="arrow">
+        </a>
+        <ul class="submenu">
+          <li><a href="listamateriais.html">Lista: Materiais</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="custos.html">
+          <img src="Custos.svg" alt="custos" class="icon" /> Custos
+        </a>
+      </li>
+      <li>
+        <a href="calendario.html">
+          <img src="Calendario.svg" alt="calendario" class="icon" /> Calendário
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="main-content">
+  <div class="page-title">Pedidos Pendentes</div>
+  <div class="pedidos-container">
+    <div class="header-bar">
+      <h2>Lista: Ocorrências Pendentes</h2>
+      <div class="search-container">
+        <input type="search" id="searchInput" placeholder="Procure..." />
+        <span>
+          <img src="procura.svg" width="30" height="30" id="searchBtn" />
+        </span>
+      </div>
+    </div>
+    <hr class="divider" />
+    <table id="tabelaPendentes">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Descrição</th>
+          <th>Cliente</th>
+          <th>Data</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+    <div class="pagination" id="paginacao"></div>
+  </div>
+</div>
+<!-- Modal para motivo -->
+<div id="motivoModal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.25); align-items:center; justify-content:center;">
+  <div style="background:white; border-radius:12px; padding:32px 24px; min-width:320px; max-width:90vw; box-shadow:0 4px 24px rgba(0,0,0,0.12); display:flex; flex-direction:column; gap:18px;">
+    <h3 style="margin:0 0 8px 0; color:#1a3d63;">Indique o motivo</h3>
+    <textarea id="motivoInput" rows="3" style="resize:none; border:2px solid #f9b300; border-radius:8px; padding:10px; font-size:16px; outline:none; transition:border 0.2s;"></textarea>
+    <div style="display:flex; gap:12px; justify-content:flex-end;">
+      <button id="motivoCancelar" style="background:#eee; color:#1a3d63; border:none; border-radius:6px; padding:8px 18px; font-size:15px; cursor:pointer;">Cancelar</button>
+      <button id="motivoConfirmar" style="background:#f9b300; color:white; border:none; border-radius:6px; padding:8px 18px; font-size:15px; font-weight:bold; cursor:pointer;">Confirmar</button>
+    </div>
+  </div>
+</div>
+<script src="pedidospendentes.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Materiais Utilizados</title>
+  <link rel="stylesheet" href="materiaisutilizados.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="icon" type="image/svg+xml" href="dashboard.svg" />
+</head>
+<body>
+
+  <header></header>
+
+  <!-- Menu lateral -->
+<div class="sidebar">
+  <h2>EYESEVERYWHERE</h2>
+  <div class="section-title">Main</div>
+  <ul>
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropdown-btn">
+        <img src="dashboard.svg" alt="dashboard" class="icon" /> Dashboard
+        <img src="seta.svg" alt="seta" class="arrow">
+      </a>
+      <ul class="submenu">
+        <li><a href="auditoriasarea.html">Auditorias</a></li>
+        <li><a href="num_ocorrencias.html">Ocorrências</a></li>
+        <li><a href="profissionais.html">Profissionais</a></li>
+        <li><a href="materiaisutilizados.html">Materiais</a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropdown-btn">
+        <img src="Auditorias.svg" alt="auditorias" class="icon" /> Auditorias
+        <img src="seta.svg" alt="seta" class="arrow">
+      </a>
+      <ul class="submenu">
+        <li><a href="listaauditorias.html">Lista: Auditorias</a></li>
+        <li><a href="criarauditoria.html">Criar Auditoria</a></li>
+        <li><a href="auditoriasemprogresso.html">Em Progresso</a></li>
+      </ul>
+    </li>
+  </ul>
+  <div class="section-title">Interface</div>
+  <ul>
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropdown-btn">
+        <img src="Pedidos.svg" alt="pedidos" class="icon" /> Pedidos
+        <img src="seta.svg" alt="seta" class="arrow">
+      </a>
+      <ul class="submenu">
+        <li><a href="listaocorrencias.html">Lista: Ocorrências</a></li>
+        <li><a href="pedidospendentes.html">Pedidos Pendentes</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="registoperitos.html">
+        <img src="Peritos.svg" alt="peritos" class="icon" /> Peritos
+      </a>
+    </li>
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropdown-btn">
+        <img src="Materiais.svg" alt="materiais" class="icon" /> Materiais
+        <img src="seta.svg" alt="seta" class="arrow">
+      </a>
+      <ul class="submenu">
+        <li><a href="listamateriais.html">Lista: Materiais</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="custos.html">
+        <img src="Custos.svg" alt="custos" class="icon" /> Custos
+      </a>
+    </li>
+    <li>
+      <a href="calendario.html">
+        <img src="Calendario.svg" alt="calendario" class="icon" /> Calendário
+      </a>
+    </li>
+  </ul>
+</div>
+
+  <div class="main-content">
+    <div class="page-title">Materiais Utilizados</div>
+   
+  
+    <div class="dashboard-container">
+      <!-- Indicadores -->
+       
+      <div class="metric-cards">
+        <div class="metric-card">
+          <div class="icon-circle azul">
+            <img src="higiene.svg" alt="Ícone Higiene" />
+          </div>
+          <h4>Higiene</h4>
+          <p>600/ano</p>
+        </div>
+        <div class="metric-card">
+          <div class="icon-circle verde">
+            <img src="seguranca.svg" alt="Ícone Segurança" />
+          </div>
+          <h4>Segurança</h4>
+          <p>800/ano</p>
+        </div>
+        <div class="metric-card">
+          <div class="icon-circle amarelo">
+            <img src="monitorização.svg" alt="Ícone Monitorização" />
+          </div>
+          <h4>Monitorização</h4>
+          <p>900/ano</p>
+        </div>
+      </div>
+    
+      <!-- Gráficos -->
+    <div class="graph-container">
+      <div class="graphs">
+        <div class="graph-card">
+          <canvas id="graficoPizzaHigiene"></canvas>
+        </div>
+        <div class="graph-card">
+          <canvas id="graficoPizzaSeguranca"></canvas>
+        </div>
+        <div class="graph-card">
+          <canvas id="graficoPizzaMonitorizacao"></canvas>
+        </div>
+      </div>
+    </div>
+
+    </div>
+  
+  <script src="materiaisutilizados.js"></script>
+</body>
+</html>

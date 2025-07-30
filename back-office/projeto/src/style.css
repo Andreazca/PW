@@ -1,0 +1,212 @@
+* {
+  box-sizing: border-box;
+}
+/* Estilo geral do corpo da página */
+body {
+  margin: 0; /* Remove margens padrão */
+  font-family: 'Segoe UI', sans-serif; /* Define a fonte padrão */
+  background-color: #e8e1d2; /* Define a cor de fundo */
+  display: flex; /* Usa flexbox para layout */
+  height: 100%; /* Define a altura total da janela */
+  overflow-x: hidden; /* Impede rolagem horizontal */
+   overflow-y: hidden; 
+}
+
+/* Cabeçalho fixo no topo da página */
+header {
+  width: 100vw; /* Ocupa toda a largura da janela */
+  background-color: #1a3d63; /* Cor de fundo do cabeçalho */
+  padding: 14px 30px; /* Espaçamento interno */
+  min-height: 60px; /* Define uma altura mínima */
+  color: white; /* Cor do texto */
+  display: flex; /* Usa flexbox para alinhamento */
+  justify-content: flex-end; /* Alinha o conteúdo à direita */
+  align-items: center; /* Centraliza verticalmente */
+  position: fixed; /* Fixa o cabeçalho no topo */
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Garante que o cabeçalho fique acima de outros elementos */
+}
+
+/* Estilo do menu lateral */
+.sidebar {
+  width: 300px; /* Define a largura fixa */
+  background-color: #1a3d63; /* Cor de fundo do menu */
+  color: white; /* Cor do texto */
+  height: calc(100vh - 80px); /* Altura total menos o cabeçalho */
+  margin-top: 80px; /* Espaço abaixo do cabeçalho */
+  padding: 20px; /* Espaçamento interno */
+  border-top-right-radius: 20px; /* Bordas arredondadas no topo direito */
+  border-bottom-right-radius: 20px; /* Bordas arredondadas na base direita */
+  flex-shrink: 0; /* Impede que o menu encolha */
+   max-height: 100vh;   /* Limita a altura ao tamanho da janela */
+}
+
+/* Título principal do menu lateral */
+.sidebar h2 {
+  font-size: 18px; /* Tamanho da fonte */
+  margin-bottom: 70px; /* Espaçamento inferior */
+  text-align: center; /* Centraliza o texto */
+}
+
+/* Títulos das seções no menu lateral */
+.sidebar .section-title {
+  font-size: 12px; /* Tamanho menor para os títulos */
+  color: #b0b0b0; /* Cor diferenciada para os títulos */
+  margin-top: 30px; /* Espaçamento superior */
+  margin-bottom: 15px; /* Espaçamento inferior */
+  text-transform: uppercase; /* Converte o texto para maiúsculas */
+  font-weight: normal; /* Define o peso da fonte como normal */
+}
+
+/* Lista de itens do menu */
+.sidebar ul {
+  list-style: none; /* Remove marcadores da lista */
+  padding: 0; /* Remove padding padrão */
+}
+
+/* Estilo dos itens do menu */
+.sidebar ul li {
+  margin-bottom: 15px; /* Espaçamento inferior entre os itens */
+  font-size: 15px; /* Tamanho da fonte */
+  display: flex; /* Usa flexbox para alinhamento */
+  flex-direction: column; /* Alinha os itens verticalmente */
+  align-items: center; /* Centraliza os itens */
+}
+
+/* Links dentro do menu */
+.sidebar ul li a {
+  color: white; /* Cor do texto */
+  text-decoration: none; /* Remove sublinhado */
+  display: flex; /* Usa flexbox para alinhamento */
+  align-items: center; /* Centraliza verticalmente */
+  font-size: 15px; /* Tamanho da fonte */
+  padding: 5px 10px; /* Espaçamento interno */
+  width: 100%; /* Ocupa toda a largura do item */
+}
+
+/* Ícones dentro dos links */
+.icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px; /* Espaço entre ícone e texto */
+}
+
+/* Seta para dropdown */
+.sidebar ul li a .arrow {
+  margin-left: auto; /* Empurra a seta para a extremidade direita */
+  font-size: 16px; /* Tamanho da seta */
+  display: inline-block; /* Garante que a seta não afete o layout */
+  align-self: center; /* Centraliza verticalmente */
+  cursor: pointer; /* Mostra o cursor de ponteiro */
+  user-select: none; /* Impede que a seta seja selecionada */
+}
+
+/* Efeito ao passar o mouse nos links */
+.sidebar ul li a:hover {
+  text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
+/* Conteúdo principal da página */
+.main-content {
+  flex: 1; /* Ocupa o espaço restante */
+  display: flex; /* Usa flexbox para layout */
+  flex-direction: column; /* Alinha itens verticalmente */
+  padding-top: 40px; /* Espaçamento superior */
+  padding-bottom: 60px; /* Espaçamento inferior */
+  padding-left: 80px; /* Espaçamento à esquerda */
+  padding-right: 80px; /* Espaçamento à direita */
+}
+
+
+/* Título da página */
+.page-title {
+  font-size: 34px;
+  color: #1a3d63;
+  font-weight: bold;
+  padding: 60px 10px 0px 10px; /* altera o local do título */
+  text-align: left;
+}
+
+  
+
+  .dashboard-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.charts-container {
+  display: flex;
+  gap: 20px;
+}
+
+.chart-card {
+  flex: 1;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+.chart-card h4 {
+  margin-bottom: 10px;
+  color: #1E3A5F;
+}
+
+canvas {
+  max-height: 180px;
+  margin-top: 0px;
+}
+
+.bottom-card {
+  width: 100%;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-height: 280px;
+}
+
+.bottom-card h3 {
+  margin-top: 0px;
+  margin-bottom: 10px;
+  color: #1E3A5F;
+}
+
+.bottom-card table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0px;
+}
+
+.bottom-card thead tr {
+  border-bottom: 2px solid #f90;
+}
+
+.bottom-card th,
+.bottom-card td {
+  padding: 4px 16px;
+  text-align: left;
+  border: none;
+}
+
+.pagination {
+  margin-top: 16px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.pagination button {
+  padding: 6px 12px;
+  background-color: #e0e0e0;
+  color: #1E3A5F;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.pagination button.active {
+  background-color: #1c3b5a;
+  color: white;
+}

@@ -1,0 +1,320 @@
+/* Define o box-sizing para incluir padding e bordas no tamanho total dos elementos */
+* {
+  box-sizing: border-box;
+}
+
+/* Estilo geral do corpo */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif; /* Fonte padrão */
+  background-color: #e8e1d2; /* Cor de fundo */
+  display: flex; /* Flexbox para layout */
+  height: 100vh; /* Altura total da janela */
+}
+
+/* Cabeçalho fixo no topo */
+header {
+  width: 100vw; /* Largura total da janela */
+  background-color: #1a3d63; /* Cor de fundo */
+  padding: 14px 30px; /* Espaçamento interno */
+  min-height: 60px; /* Altura mínima */
+  color: white; /* Cor do texto */
+  display: flex; /* Flexbox para alinhamento */
+  justify-content: flex-end; /* Alinha o conteúdo à direita */
+  align-items: center; /* Centraliza verticalmente */
+  position: fixed; /* Fixa no topo */
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Garante que o cabeçalho fique acima de outros elementos */
+}
+
+/* Estilo do menu lateral */
+.sidebar {
+  width: 300px; /* Largura fixa */
+  background-color: #1a3d63; /* Cor de fundo */
+  color: white; /* Cor do texto */
+  height: calc(100vh - 80px); /* Altura total menos o cabeçalho */
+  margin-top: 80px; /* Espaço abaixo do cabeçalho */
+  padding: 20px; /* Espaçamento interno */
+  border-top-right-radius: 20px; /* Bordas arredondadas no topo */
+  border-bottom-right-radius: 20px; /* Bordas arredondadas na base */
+}
+
+/* Título principal do menu lateral */
+.sidebar h2 {
+  font-size: 18px; /* Tamanho da fonte */
+  margin-bottom: 70px; /* Espaçamento inferior */
+  text-align: center; /* Centraliza o texto */
+}
+
+/* Títulos das seções no menu lateral */
+.sidebar .section-title {
+  font-size: 12px; 
+  color: #b0b0b0; 
+  margin-top: 30px; /* Espaçamento superior */
+  margin-bottom: 15px; /* Espaçamento inferior */
+  text-transform: uppercase; /* Texto em maiúsculas */
+  font-weight: normal; /* Peso normal */
+}
+
+/* Lista de itens do menu */
+.sidebar ul {
+  list-style: none; /* Remove marcadores */
+  padding: 0; /* Remove padding */
+}
+
+/* Estilo dos itens do menu */
+.sidebar ul li {
+  margin-bottom: 15px; /* Espaçamento inferior */
+  font-size: 15px; /* Tamanho da fonte */
+  display: flex; /* Flexbox para alinhamento */
+  flex-direction: column; /* Alinha itens verticalmente */
+  align-items: center; /* Centraliza os itens */
+}
+
+/* Links dentro do menu */
+.sidebar ul li a {
+  color: white; /* Cor do texto */
+  text-decoration: none; /* Remove sublinhado */
+  display: flex; /* Flexbox para alinhamento */
+  align-items: center; /* Centraliza verticalmente */
+  font-size: 15px; /* Tamanho da fonte */
+  padding: 5px 10px; /* Espaçamento interno */
+  width: 100%; /* Ocupa toda a largura */
+}
+
+/* Ícones dentro dos links */
+.sidebar ul li a .icon {
+  margin-right: 10px; /* Espaço entre ícone e texto */
+  width: 20px; /* Largura do ícone */
+  height: 20px; /* Altura do ícone */
+}
+
+/* Seta para dropdown */
+.sidebar ul li a .arrow {
+  margin-left: auto; /* Empurra para a direita */
+  font-size: 16px; /* Tamanho da seta */
+  display: inline-block; /* Garante que a seta não afete o layout */
+  align-self: center; /* Centraliza verticalmente */
+  cursor: pointer; /* Cursor de ponteiro */
+  user-select: none; /* Impede seleção */
+  transition: transform 0.3s;
+}
+
+/* Efeito ao passar o mouse nos links */
+.sidebar ul li a:hover {
+  text-decoration: underline; /* Adiciona sublinhado */
+}
+
+/* Conteúdo principal */
+.main-content {
+  flex: 1; /* Ocupa o espaço restante */
+  display: flex; /* Usa flexbox para layout */
+  flex-direction: column; /* Alinha itens verticalmente */
+  padding-top: 60px; /* Espaçamento superior */
+  padding-bottom: 60px; /* Espaçamento inferior */
+  padding-left: 80px; /* Espaçamento à esquerda */
+  padding-right: 80px; /* Espaçamento à direita */
+  box-sizing: border-box; /* Inclui padding e borda no tamanho */
+  align-items: stretch; /* Estica os itens para preencher o container */
+}
+/* Título da página - alinhado à esquerda, igual ao num_ocorrencias */
+.page-title {
+  font-size: 34px;
+  color: #1a3d63;
+  font-weight: bold;
+  padding: 20px 0;
+  text-align: left;
+}
+/* Botão de dropdown */
+.dropdown-btn {
+  cursor: pointer; /* Cursor de ponteiro */
+  display: flex; /* Flexbox para alinhamento */
+  justify-content: space-between; /* Espaça os itens horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+}
+
+/* Submenu */
+.submenu {
+  display: none; /* Inicialmente oculto */
+  list-style: none; /* Remove marcadores */
+  padding-left: 20px; /* Alinhamento dos itens do submenu */
+  margin-top: 10px; /* Espaçamento superior */
+  position: relative; /* Mantém o submenu abaixo do item */
+  top: 0;
+}
+
+/* Links dentro do submenu */
+.submenu a {
+  color: #ffffff; /* Cor do texto */
+  text-decoration: none; /* Remove sublinhado */
+  font-size: 14px; /* Tamanho da fonte */
+}
+
+/* Efeito ao passar o mouse nos links do submenu */
+.submenu a:hover {
+  text-decoration: underline; /* Adiciona sublinhado */
+}
+
+/* Efeito ao passar o mouse no botão de dropdown */
+.dropdown-btn:hover {
+  text-decoration: underline; /* Adiciona sublinhado */
+}
+
+/* Faz a seta rodar ao passar o rato sobre o botão dropdown */
+.dropdown-btn:hover .arrow {
+  transform: rotate(180deg);
+}
+
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.metric-cards {
+  display: flex;
+  justify-content: center; /* Centraliza as caixinhas */
+  gap: 15px;
+  flex-wrap: nowrap;
+  margin-bottom: 30px;
+  margin-top: -20px;
+  width: 100%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+.metric-card {
+  background-color: white;
+  border-radius: 16px;
+  width: 220px;
+  min-height: 130px;
+  padding: 15px 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.metric-card .numero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.metric-card h4 {
+  font-size: 13px;
+  margin: 0;
+  color: #1a3d63;
+  font-weight: bold;
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: visible;
+  white-space: normal; /* Permite quebra de linha */
+  width: 100%;
+  box-sizing: border-box;
+  line-height: 1.2;
+  word-break: break-word; /* Quebra palavras longas se necessário */
+}
+
+/* Filtros/Leegendas acima do gráfico */
+.filtros {
+  display: flex; /* Flexbox para layout */
+  justify-content: center; /* Centraliza horizontalmente */
+  gap: 30px; /* Espaçamento entre filtros */
+  flex-wrap: wrap; /* Permite quebra de linha */
+  margin: 0 auto 15px auto; /* Centraliza e ajusta margens */
+  max-width: 1000px; /* Largura máxima */
+}
+
+/* Estilo de cada filtro */
+.filtro {
+  background-color: #fff; /* Fundo branco */
+  border-radius: 20px; /* Bordas arredondadas */
+  padding: 15px 10px; /* Espaçamento interno */
+  width: 260px; /* Largura fixa */
+  height: 140px; /* Altura fixa */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Sombra */
+  display: flex; /* Flexbox para alinhamento */
+  flex-direction: column; /* Alinha itens verticalmente */
+  align-items: center; /* Centraliza itens */
+  justify-content: center; /* Centraliza verticalmente */
+  cursor: default; /* Remove interatividade */
+}
+
+/* Número dentro do filtro */
+.filtro .numero {
+  background-color: var(--cor); /* Cor dinâmica */
+  color: white; /* Cor do texto */
+  font-weight: bold; /* Negrito */
+  width: 32px; /* Largura fixa */
+  height: 32px; /* Altura fixa */
+  border-radius: 50%; /* Formato circular */
+  display: flex; /* Flexbox para alinhamento */
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  margin-bottom: 10px; /* Espaçamento inferior */
+}
+
+/* Texto dentro do filtro */
+.filtro span {
+  font-size: 14px; /* Tamanho da fonte */
+  color: #333; /* Cor do texto */
+  line-height: 1.4; /* Altura da linha */
+  text-align: center; /* Centraliza o texto */
+}
+
+.graph-section {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+  max-width: 100%;
+  margin-top: -40px;
+  margin-bottom: 0;
+  box-sizing: border-box;
+  height: 580px;
+}
+
+.graph-bar {
+  flex: 1.2;
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+  height: 580px;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.graph-bar canvas {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100%;
+  max-height: 100%;
+}
+

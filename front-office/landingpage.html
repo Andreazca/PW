@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EyesEverywhere</title> 
+    <link rel="stylesheet" href="landingpage.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="images/logo-eyeseverywhere.png" alt="EyesEverywhere" class="logo-img">
+          </div>
+                 
+    <nav>
+        <a href="#servicos">Serviços</a>
+        <a href="#indicadores">Indicadores</a>
+        <a href="#auditorias">Auditorias</a>
+        <a href="#team">Equipa</a>
+        <a href="#contact">Contactar</a>
+        <a href="#" class="login-button" onclick="openLogin()">Iniciar Sessão</a>
+    </nav>
+</header>
+
+
+  <!-- Modal Login -->
+<div class="login-modal" id="loginModal">
+    <div class="login-box">
+        <button class="close-btn" onclick="closeLogin()">×</button>
+        <h2>LOGIN</h2>
+        <hr class="login-line">
+        <p><strong>Bem-Vindo</strong></p>
+        <div class="input-group">
+            <i class="fa fa-user"></i>
+            <input type="email" placeholder="Email" id="loginEmail" required>
+        </div>
+        <div class="input-group">
+            <i class="fa fa-lock"></i>
+            <input type="password" placeholder="Password" id="loginPassword" required>
+        </div>
+        <div id="loginError" style="color: red; margin-bottom: 10px; display: none;"></div>
+        <button type="button" class="login-submit" onclick="validateLogin()">Entrar</button>
+    </div>
+</div>
+
+
+
+    <section class="hero">
+        <video autoplay muted loop class="hero-video">
+            <source src="images/background.mp4" type="video/mp4">
+            Seu navegador não suporta vídeos HTML5.
+        </video>
+        <div class="overlay"></div>
+        <div class="hero-content">
+          <div class="slogan-left">GARANTIMOS A SEGURANÇA E EFICIÊNCIA NA </div>
+          <div class="slogan-center">INDÚSTRIA</div>
+        </div>
+    </section>
+ <!-- ======== SERVIÇOS ======== -->
+    <section class="services" id="servicos">
+        <h2>SERVIÇOS</h2>
+        <div class="service-container">
+    
+            <div class="service">
+                <img src="images/monitorizacao1.png" alt="Monitorização de equipamentos">
+                <p>Monitorizamos equipamentos industriais, de forma a garantir conformidade com as normas de eficiência energética, prevenindo falhas e otimizando a operação da sua organização.</p>
+            </div>
+    
+            <div class="service">
+                <img src="images/seguranca1.png" alt="Segurança e Higiene">
+                <p>Avaliamos e garantimos o cumprimento das normas de segurança e higiene no trabalho, reduzindo riscos de acidentes e melhorando as condições laborais nas suas instalações industriais.</p>
+            </div>
+    
+            <div class="service">
+                <img src="images/inspecoes1.png" alt="Gestão de inspeções periódicas">
+                <p>Realizamos inspeções periódicas nas suas instalações industriais, assegurando a conformidade com as normas regulatórias e a manutenção preventiva de equipamentos.</p>
+            </div>
+    
+        </div>
+    </section>
+<!-- ======== INDICADORES ======== -->
+    <section class="indicators" id="indicadores">
+    <h2>INDICADORES</h2>
+    <div class="indicators-container">
+        <div class="indicator">
+            <div class="indicator-icon">
+                <img src="images/indicador1.jpg" alt="Número de auditorias realizadas">
+            </div>
+            <h3>Número de auditorias realizadas</h3>
+            <p>Mais de 300 auditorias realizadas, garantindo conformidade e eficiência operacional.</p>
+        </div>
+        <div class="indicator">
+            <div class="indicator-icon">
+                <img src="images/indicador2.jpg" alt="Ocorrências registadas e resolvidas">
+            </div>
+            <h3>Ocorrências registadas e resolvidas</h3>
+            <p>98% das ocorrências resolvidas com soluções eficazes para nossos clientes.</p>
+        </div>
+        <div class="indicator">
+            <div class="indicator-icon">
+                <img src="images/indicador3.jpg" alt="Tempo médio de resposta">
+            </div>
+            <h3>Tempo médio de resposta</h3>
+            <p>Respostas rápidas: análise em 4 horas e resolução em até 48 horas.</p>
+        </div>
+        <div class="indicator">
+            <div class="indicator-icon">
+                <img src="images/indicador4.jpg" alt="Satisfação dos clientes">
+            </div>
+            <h3>Satisfação dos clientes</h3>
+            <p>95% de satisfação dos clientes com nossos serviços de monitorização e auditoria.</p>
+        </div>
+    </div>
+</section>
+    
+    <!-- ======== TIMELINE (Linha do tempo dos indicadores) ======== -->
+
+    <section class="timeline-section" id="auditorias">
+    </section>
+
+    <section class="cta-banner">
+        <h2>Faça a sua Auditoria connosco</h2>
+        <p>Para mais informações <a href="#contact">contacte-nos!</a></p>
+    </section>
+    
+
+    <!-- ======== EQUIPA ======== -->
+    <section class="team-section" id="team">
+        <h2>A NOSSA EQUIPA</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <img src="images/andre.png" alt="André Cardoso">
+                <p>André Cardoso</p>
+            </div>
+            <div class="team-member">
+                <img src="images/bernardo.png" alt="Bernardo Ataíde">
+                <p>Bernardo Ataíde</p>
+            </div>
+            <div class="team-member">
+                <img src="images/carolina.png" alt="Carolina Teixeira">
+                <p>Carolina Teixeira</p>
+            </div>
+            <div class="team-member">
+                <img src="images/joao.png" alt="João Martins">
+                <p>João Martins</p>
+            </div>
+            <div class="team-member">
+                <img src="images/lara.png" alt="Lara Brandão">
+                <p>Lara Brandão</p>
+            </div>
+            <div class="team-member">
+                <img src="images/rodrigo.png" alt="Rodrigo Vilhena">
+                <p>Rodrigo Vilhena</p>
+            </div>
+        </div>
+    </section>
+       <!-- ======== CONTACTO ======== -->
+    <section class="contact-section" id="contact">
+        <h2>Contacte-nos</h2>
+        <p>Entre em contacto connosco para mais informações ou dúvidas.</p>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="info-item">
+                    <i class="fa fa-phone"></i>
+                    <p>+351 202 200 222</p>
+                </div>
+                <div class="info-item">
+                    <i class="fa fa-envelope"></i>
+                    <p>info@eyeseverywhere.com</p>
+                </div>
+                <div class="info-item">
+                    <i class="fa fa-map-marker"></i>
+                    <p>Rua Da Sede, 123, Guimarães</p>
+                </div>
+            </div>
+            <form class="contact-form">
+                <input type="text" placeholder="Nome" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Mensagem" required></textarea>
+                <button type="submit">Enviar Mensagem</button>
+            </form>
+        </div>
+    </section>
+    
+  <!-- Fim do conteúdo da página -->
+
+<!-- JavaScript externo -->
+<script src="landingpage.js"></script>
+</body>
+</html>

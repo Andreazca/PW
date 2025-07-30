@@ -1,0 +1,314 @@
+/* Reset box-sizing */
+* {
+  box-sizing: border-box;
+}
+
+/* Estilo geral do corpo da página */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #e8e1d2;
+  display: flex;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* Cabeçalho fixo */
+header {
+  width: 100vw;
+  background-color: #1a3d63;
+  padding: 14px 30px;
+  min-height: 60px;
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 300px;
+  background-color: #1a3d63;
+  color: white;
+  height: calc(100vh - 80px);
+  margin-top: 80px;
+  padding: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  flex-shrink: 0;
+  max-height: 100vh;
+  overflow-y: auto;
+}
+
+.sidebar h2 {
+  font-size: 18px;
+  margin-bottom: 70px;
+  text-align: center;
+}
+
+.sidebar .section-title {
+  font-size: 12px;
+  color: #b0b0b0;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 15px;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  padding: 5px 10px;
+  width: 100%;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.sidebar ul li a .arrow {
+  margin-left: auto;
+  font-size: 16px;
+  display: inline-block;
+  align-self: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.sidebar ul li a:hover {
+  text-decoration: underline;
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+.dropdown-btn:hover .arrow {
+  transform: rotate(180deg);
+}
+
+/* Conteúdo principal */
+.main-content {
+  max-width: none;
+  margin: 0 auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  box-sizing: border-box;
+  align-items: stretch;
+  background: #e8e1d2;
+}
+
+/* Título da página */
+.page-title {
+  font-size: 34px;
+  color: #1a3d63;
+  font-weight: bold;
+  padding-top: 40px;
+  padding-bottom: 20px;
+  text-align: left;
+  margin: 0 auto 0 auto;
+  max-width: 1160px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Container da lista de auditorias (igual ao de ocorrências) */
+.auditorias-container {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.10);
+  max-width: 1160px;
+  width: 100%;
+  min-width: 320px;
+  margin: 15px auto 0 auto;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  box-sizing: border-box;
+  min-height: auto;
+  height: auto;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+/* Barra do cabeçalho da tabela com título e pesquisa */
+.header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+/* Título do formulário */
+.auditorias-container h2 {
+  color: #1a3d63;
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: left;
+  letter-spacing: 0.5px;
+  padding-left: 0;
+}
+
+/* Linha divisória */
+.divider {
+  border: none;
+  border-top: 4px solid #f9b300;
+  margin-bottom: 28px;
+  margin-top: 0;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Tabela */
+.auditorias-container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 16px;
+  background: transparent;
+  box-shadow: none;
+}
+
+.auditorias-container thead tr,
+.auditorias-container thead th {
+  background: #f9b300;
+  color: #1a3d63;
+  font-size: 18px;
+  padding: 9px 18px;
+  font-weight: bold;
+  border: none;
+  text-align: center;
+  letter-spacing: 0.5px;
+  border-bottom: 3px solid #ffb84d;
+  box-shadow: none;
+  line-height: 1.4;
+}
+
+.auditorias-container tr:hover td {
+  background: #fff3e0;
+}
+
+.auditorias-container tr:hover td.tabela-vazia {
+  background: transparent !important;
+  cursor: default;
+}
+
+/* Remove linha (border-bottom) na célula da mensagem */
+.auditorias-container td.tabela-vazia {
+  border-bottom: none !important;
+}
+
+/* Células da tabela */
+.auditorias-container td {
+   border-bottom: 1px solid #ccc;
+  padding: 12px; /* Para ficar igual ao pedidos */
+  text-align: center; /* Igual pedidos */
+}
+
+/* Pesquisa */
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.search-container input[type="search"] {
+  padding: 8px 14px;
+  font-size: 16px;
+  height: 36px;
+  width: 220px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+/* Botão de pesquisa */
+.search-container span {
+  height: 36px;
+  width: 36px;
+  background-color: transparent;
+  padding: 0;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.search-container img#searchBtn {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  border-radius: 6px;
+  transition: transform 0.2s ease;
+}
+
+/* Mensagem quando tabela está vazia */
+.tabela-vazia {
+  text-align: center;
+  color: #1a3d63;
+  font-size: 18px;
+  font-weight: normal;
+  padding: 20px 0 0 0;
+  letter-spacing: 0.5px;
+  background: none;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  opacity: 0.85;
+}
+
+/* Paginação */
+.pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.pagination button {
+  padding: 8px 12px;
+  border: none;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.pagination button.active {
+  background-color: #1a3d63;
+  color: white;
+}
+

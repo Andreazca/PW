@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Criar Auditoria</title>
+  <link rel="stylesheet" href="criarauditoria.css" />
+  <!-- Auditorias.svg como favicon -->
+  <link rel="icon" type="image/svg+xml" href="Auditorias.svg" />
+</head>
+<body>
+  <header></header>
+  
+ <!-- Menu lateral -->
+<div class="sidebar">
+  <h2>EYESEVERYWHERE</h2>
+  <div class="section-title">Main</div>
+  <ul>
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropdown-btn">
+        <img src="dashboard.svg" alt="dashboard" class="icon" /> Dashboard
+        <img src="seta.svg" alt="seta" class="arrow">
+      </a>
+      <ul class="submenu">
+        <li><a href="auditoriasarea.html">Auditorias</a></li>
+        <li><a href="num_ocorrencias.html">Ocorrências</a></li>
+        <li><a href="profissionais.html">Profissionais</a></li>
+        <li><a href="materiaisutilizados.html">Materiais</a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropdown-btn">
+        <img src="Auditorias.svg" alt="auditorias" class="icon" /> Auditorias
+        <img src="seta.svg" alt="seta" class="arrow">
+      </a>
+      <ul class="submenu">
+        <li><a href="listaauditorias.html">Lista: Auditorias</a></li>
+        <li><a href="criarauditoria.html">Criar Auditoria</a></li>
+        <li><a href="auditoriasemprogresso.html">Em Progresso</a></li>
+      </ul>
+    </li>
+  </ul>
+  <div class="section-title">Interface</div>
+  <ul>
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropdown-btn">
+        <img src="Pedidos.svg" alt="pedidos" class="icon" /> Pedidos
+        <img src="seta.svg" alt="seta" class="arrow">
+      </a>
+      <ul class="submenu">
+        <li><a href="listaocorrencias.html">Lista: Ocorrências</a></li>
+        <li><a href="pedidospendentes.html">Pedidos Pendentes</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="registoperitos.html">
+        <img src="Peritos.svg" alt="peritos" class="icon" /> Peritos
+      </a>
+    </li>
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropdown-btn">
+        <img src="Materiais.svg" alt="materiais" class="icon" /> Materiais
+        <img src="seta.svg" alt="seta" class="arrow">
+      </a>
+      <ul class="submenu">
+        <li><a href="listamateriais.html">Lista: Materiais</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="custos.html">
+        <img src="Custos.svg" alt="custos" class="icon" /> Custos
+      </a>
+    </li>
+    <li>
+      <a href="calendario.html">
+        <img src="Calendario.svg" alt="calendario" class="icon" /> Calendário
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="main-content">
+  <div class="page-title">Criar Plano de Auditoria</div>
+  <div class="form-container">
+    <h2>Novo Plano de Auditoria</h2>
+    <hr class="divider" />
+    <form id="formAuditoria" autocomplete="off">
+      <div class="form-group">
+        <label for="nomeAuditoria">Nome da Auditoria</label>
+        <input type="text" id="nomeAuditoria" required>
+      </div>
+      <div class="form-group">
+        <label for="origem">Origem</label>
+        <div class="custom-select">
+          <select id="origem" required>
+            <option value="" disabled selected hidden>Selecionar</option>
+            <option value="Interna">Interna</option>
+            <option value="Externa">Externa</option>
+          </select>
+          <!-- seta automática do sistema, não usar img -->
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="descricao">Descrição</label>
+        <input type="text" id="descricao" required>
+      </div>
+      <div class="form-group">
+        <label for="tipo">Tipo</label>
+        <div class="custom-select">
+          <select id="tipo" required>
+            <option value="" disabled selected hidden>Selecionar</option>
+            <option value="Higiene">Higiene</option>
+            <option value="Segurança">Segurança</option>
+            <option value="Monitorização">Monitorização</option>
+          </select>
+          <!-- seta automática do sistema, não usar img -->
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="local">Cidade</label>
+        <input type="text" id="local" name="local" required>
+      </div>
+      <div class="form-group">
+        <label for="rua">Rua</label>
+        <input type="text" id="rua" required>
+      </div>
+      <div class="form-group">
+        <label for="numero">Número</label>
+        <input type="number" id="numero" required min="1" step="1">
+      </div>
+      <div class="form-group">
+        <label for="codigoPostal">Código Postal</label>
+        <input type="text" id="codigoPostal" required pattern="\d{4}-\d{3}" maxlength="8" inputmode="numeric" placeholder="xxxx-xxx">
+      </div>
+      <div class="form-group">
+        <label for="perito">Perito</label>
+        <div class="custom-select">
+          <select id="perito" required>
+            <option value="" disabled selected hidden>Selecionar</option>
+            <option value="João">João</option>
+            <option value="Carolina">Carolina</option>
+            <option value="Lara">Lara</option>
+            <option value="André">André</option>
+            <option value="Bernardo">Bernardo</option>
+            <option value="Rodrigo">Rodrigo</option>
+          </select>
+          <!-- seta automática do sistema, não usar img -->
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="materiais">Materiais</label>
+        <div class="custom-multiselect" id="materiais-multiselect">
+          <div class="multiselect-selected" id="materiais-selected" tabindex="0">Selecionar</div>
+          <div class="multiselect-options" id="materiais-options" style="background:#fff;">
+            <label><input type="checkbox" value="Spray Desinfetante"> Spray Desinfetante</label>
+            <label><input type="checkbox" value="Kit de Limpeza"> Kit de Limpeza</label>
+            <label><input type="checkbox" value="Botas de Biqueira de Aço"> Botas de Biqueira de Aço</label>
+            <label><input type="checkbox" value="Kit de Primeiros Socorros"> Kit de Primeiros Socorros</label>
+            <label><input type="checkbox" value="Câmara Térmica"> Câmara Térmica</label>
+            <label><input type="checkbox" value="Termohigrómetro"> Termohigrómetro</label>
+            <label><input type="checkbox" value="Sensor de Temperatura"> Sensor de Temperatura</label>
+            <label><input type="checkbox" value="Sensor de Quebra de Fio"> Sensor de Quebra de Fio</label>
+          </div>
+          <input type="hidden" id="materiais" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="data">Data</label>
+        <input type="date" id="data" required min="">
+      </div>
+      <div class="form-group">
+        <label for="duracao">Duração Estimada (em horas)</label>
+        <input type="number" id="duracao" min="1" step="1" required>
+      </div>
+      <div class="form-actions">
+        <button type="submit" class="btn-registar">Registar</button>
+        <button type="reset" class="btn-cancelar">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>
+<script src="criarauditoria.js"></script>
+<script>
+  // Adiciona seta SVG a todos os custom-select e custom-multiselect
+  document.addEventListener("DOMContentLoaded", function () {
+    const selects = document.querySelectorAll('.custom-select, .custom-multiselect');
+    selects.forEach(sel => {
+      if (!sel.querySelector('.arrow')) {
+        const arrow = document.createElement('span');
+        arrow.className = 'arrow';
+        arrow.innerHTML = `<svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M5 8L10 13L15 8" stroke="#487dda" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+        sel.appendChild(arrow);
+      }
+    });
+    // Garante que o "Selecionar" tem a mesma fonte, tamanho e cor 
+    const selectsEl = document.querySelectorAll('select');
+    selectsEl.forEach(s => {
+      s.style.fontFamily = "'Segoe UI', sans-serif";
+      s.style.fontSize = "15px";
+      s.style.color = "#1a3d63";
+    });
+    // Para o multiselect visual
+    const multiSel = document.getElementById('materiais-selected');
+    if (multiSel) {
+      multiSel.style.fontFamily = "'Segoe UI', sans-serif";
+      multiSel.style.fontSize = "15px";
+      multiSel.style.color = "#1a3d63";
+    }
+  });
+</script>
+</body>
+</html>
+

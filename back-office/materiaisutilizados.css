@@ -1,0 +1,308 @@
+/* Define o box-sizing para incluir padding e bordas no tamanho total dos elementos */
+* {
+  box-sizing: border-box;
+}
+
+/* Estilo geral do corpo da página */
+body {
+  margin: 0; /* Remove margens padrão */
+  font-family: 'Segoe UI', sans-serif; /* Define a fonte padrão */
+  background-color: #e8e1d2; /* Define a cor de fundo */
+  display: flex; /* Usa flexbox para layout */
+  height: 100vh; /* Define a altura total da janela */
+  overflow-x: hidden; /* Impede rolagem horizontal */
+  overflow-y: auto; /* Permite rolagem vertical */
+}
+
+/* Cabeçalho fixo no topo da página */
+header {
+  width: 100vw; /* Ocupa toda a largura da janela */
+  background-color: #1a3d63; /* Cor de fundo do cabeçalho */
+  padding: 14px 30px; /* Espaçamento interno */
+  min-height: 60px; /* Define uma altura mínima */
+  color: white; /* Cor do texto */
+  display: flex; /* Usa flexbox para alinhamento */
+  justify-content: flex-end; /* Alinha o conteúdo à direita */
+  align-items: center; /* Centraliza verticalmente */
+  position: fixed; /* Fixa o cabeçalho no topo */
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Garante que o cabeçalho fique acima de outros elementos */
+}
+
+/* Estilo do menu lateral */
+.sidebar {
+  width: 300px; /* Define a largura fixa */
+  background-color: #1a3d63; /* Cor de fundo do menu */
+  color: white; /* Cor do texto */
+  height: calc(100vh - 80px); /* Altura total menos o cabeçalho */
+  margin-top: 80px; /* Espaço abaixo do cabeçalho */
+  padding: 20px; /* Espaçamento interno */
+  border-top-right-radius: 20px; /* Bordas arredondadas no topo direito */
+  border-bottom-right-radius: 20px; /* Bordas arredondadas na base direita */
+  flex-shrink: 0; /* Impede que o menu encolha */
+   max-height: 100vh;   /* Limita a altura ao tamanho da janela */
+  overflow-y: auto;
+}
+
+/* Título principal do menu lateral */
+.sidebar h2 {
+  font-size: 18px; /* Tamanho da fonte */
+  margin-bottom: 70px; /* Espaçamento inferior */
+  text-align: center; /* Centraliza o texto */
+}
+
+/* Títulos das seções no menu lateral */
+.sidebar .section-title {
+  font-size: 12px; /* Tamanho menor para os títulos */
+  color: #b0b0b0; /* Cor diferenciada para os títulos */
+  margin-top: 30px; /* Espaçamento superior */
+  margin-bottom: 15px; /* Espaçamento inferior */
+  text-transform: uppercase; /* Converte o texto para maiúsculas */
+  font-weight: normal; /* Define o peso da fonte como normal */
+}
+
+/* Lista de itens do menu */
+.sidebar ul {
+  list-style: none; /* Remove marcadores da lista */
+  padding: 0; /* Remove padding padrão */
+}
+
+/* Estilo dos itens do menu */
+.sidebar ul li {
+  margin-bottom: 15px; /* Espaçamento inferior entre os itens */
+  font-size: 15px; /* Tamanho da fonte */
+  display: flex; /* Usa flexbox para alinhamento */
+  flex-direction: column; /* Alinha os itens verticalmente */
+  align-items: center; /* Centraliza os itens */
+}
+
+/* Links dentro do menu */
+.sidebar ul li a {
+  color: white; /* Cor do texto */
+  text-decoration: none; /* Remove sublinhado */
+  display: flex; /* Usa flexbox para alinhamento */
+  align-items: center; /* Centraliza verticalmente */
+  font-size: 15px; /* Tamanho da fonte */
+  padding: 5px 10px; /* Espaçamento interno */
+  width: 100%; /* Ocupa toda a largura do item */
+}
+
+/* Ícones dentro dos links */
+.icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px; /* Espaço entre ícone e texto */
+}
+
+/* Seta para dropdown */
+.sidebar ul li a .arrow {
+  margin-left: auto; /* Empurra a seta para a extremidade direita */
+  font-size: 16px; /* Tamanho da seta */
+  display: inline-block; /* Garante que a seta não afete o layout */
+  align-self: center; /* Centraliza verticalmente */
+  cursor: pointer; /* Mostra o cursor de ponteiro */
+  user-select: none; /* Impede que a seta seja selecionada */
+}
+
+/* Efeito ao passar o mouse nos links */
+.sidebar ul li a:hover {
+  text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
+
+/* Conteúdo principal da página */
+.main-content {
+  flex: 1; /* Ocupa o espaço restante */
+  display: flex; /* Usa flexbox para layout */
+  flex-direction: column; /* Alinha itens verticalmente */
+  padding-top: 40px; /* Espaçamento superior */
+  padding-bottom: 60px; /* Espaçamento inferior */
+  padding-left: 80px; /* Espaçamento à esquerda */
+  padding-right: 80px; /* Espaçamento à direita */
+}
+
+
+/* Título da página */
+.page-title {
+  font-size: 34px;
+  color: #1a3d63;
+  font-weight: bold;
+  padding: 60px 95px 30px 68px; /* altera o local do título */
+  text-align: left;
+}
+  
+
+  /* ====== SECÇÃO: Indicadores no topo do dashboard ====== */
+/* Indicadores no topo */
+.metric-cards {
+  display: flex; 
+  justify-content: center; 
+  gap: 40px; /* Define um espaçamento de 15px entre as caixinhas. */
+  flex-wrap: nowrap; /* Impede que as caixinhas quebrem para a próxima linha. */
+  margin-bottom: 5px; /* Adiciona um espaçamento de 30px abaixo do contêiner. */
+  margin-top: -30px; /* Adiciona um espaçamento negativo acima do contêiner, "puxando-o" para cima. */
+  width: 100%; /* Faz o contêiner ocupar 100% da largura disponível. */
+  max-width: 1000px; /* Limita a largura máxima do contêiner a 1000px. */
+  margin-left: auto; /* Centraliza o contêiner horizontalmente (esquerda). */
+  margin-right: auto; /* Centraliza o contêiner horizontalmente (direita). */
+  box-sizing: border-box; /* Inclui padding e bordas no cálculo do tamanho total do contêiner. */
+}
+
+.metric-card {
+  background-color: white; /* Define o fundo branco para cada caixinha. */
+  border-radius: 16px; /* Arredonda os cantos da caixinha com um raio de 16px. */
+  width: 220px; /* Define a largura fixa de cada caixinha. */
+  min-height: 130px; /* Define a altura mínima de 130px para cada caixinha. */
+  padding: 15px 10px; /* Adiciona 15px de espaçamento interno no topo e na base, e 10px nas laterais. */
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra leve ao redor da caixinha. */
+  text-align: center; /* Centraliza o texto dentro da caixinha. */
+  display: flex; /* Usa Flexbox para organizar o conteúdo dentro da caixinha. */
+  flex-direction: column; /* Alinha os elementos dentro da caixinha verticalmente. */
+  align-items: center; /* Centraliza os elementos horizontalmente dentro da caixinha. */
+  justify-content: space-between; /* Distribui os elementos verticalmente com espaço entre eles. */
+  box-sizing: border-box; /* Inclui padding e bordas no cálculo do tamanho total da caixinha. */
+  flex-shrink: 0; /* Impede que a caixinha encolha se o espaço disponível for menor. */
+}
+
+.metric-card h4 {
+  font-size: 13px; /* Define o tamanho da fonte como 13px. */
+  margin: 0; /* Remove margens ao redor do título. */
+  color: #1a3d63; /* Define a cor do texto como azul escuro. */
+  font-weight: bold; /* Define o texto como negrito. */
+  min-height: 32px; /* Define uma altura mínima de 32px para o título. */
+  display: flex; /* Usa Flexbox para organizar o conteúdo do título. */
+  align-items: center; /* Centraliza o texto verticalmente dentro do título. */
+  justify-content: center; /* Centraliza o texto horizontalmente dentro do título. */
+  text-align: center; /* Centraliza o texto dentro do título. */
+  overflow: visible; /* Permite que o conteúdo do título ultrapasse os limites, se necessário. */
+  white-space: normal; /* Permite que o texto quebre em várias linhas, se necessário. */
+  width: 100%; /* Faz o título ocupar 100% da largura disponível. */
+  box-sizing: border-box; /* Inclui padding e bordas no cálculo do tamanho total do título. */
+  line-height: 1.2; /* Define o espaçamento entre linhas como 1.2 vezes o tamanho da fonte. */
+  word-break: break-word; /* Quebra palavras longas para evitar que ultrapassem os limites do título. */
+}
+
+/* Valor em baixo */
+.metric-card p {
+  font-size: 18px; /* Define o tamanho da fonte do valor */
+  font-weight: bold; /* Define o texto como negrito */
+  margin: 0; /* Remove margens ao redor do valor */
+  margin-top: auto; /* Empurra o valor para o final do cartão */
+}
+
+/* ====== SECÇÃO: Ícones circulares com fundo colorido ====== */
+.icon-circle {
+  width: 34px; /* Define a largura do círculo */
+  height: 34px; /* Define a altura do círculo */
+  background-color: white; /* Define a cor de fundo do círculo */
+  border-radius: 50%; /* Torna o fundo circular */
+  display: flex; /* Usa Flexbox para alinhar o conteúdo */
+  align-items: center; /* Centraliza verticalmente o conteúdo */
+  justify-content: center; /* Centraliza horizontalmente o conteúdo */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Adiciona uma sombra leve ao círculo */
+}
+
+.icon-circle img {
+  width: 17px; /* Define a largura do ícone dentro do círculo */
+  height: 17px; /* Define a altura do ícone dentro do círculo */
+}
+
+/* ====== Cores específicas por categoria (atribuídas por classes) ====== */
+.icon-circle.azul {
+  background-color: #1976d2; /* Define a cor azul para o círculo */
+}
+
+.icon-circle.verde {
+  background-color: #81c784; /* Define a cor verde para o círculo */
+}
+
+.icon-circle.amarelo {
+  background-color: #ffb300; /* Define a cor amarela para o círculo */
+}
+
+/* ====== Contêiner principal do dashboard (centra a área bege) ====== */
+.dashboard-container {
+  display: flex; /* Usa Flexbox para alinhar os elementos */
+  flex-direction: column; /* Alinha os elementos verticalmente */
+  gap: 15px; /* Define o espaçamento entre as seções */
+  max-width: 1200px; /* Define a largura máxima do contêiner */
+  margin: 20px auto 0 auto; /* Centraliza o contêiner horizontalmente */
+  padding: 20px 20px; /* Adiciona espaçamento interno (superior e lateral) */
+}
+
+
+/* ====== Área onde estão os gráficos lado a lado ====== */
+
+.graph-container {
+  background-color: white; /* Fundo branco para todos os gráficos */
+  padding: 20px; /* Espaçamento interno */
+  border-radius: 20px; /* Bordas arredondadas */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra leve */
+  width: 100%; /* Largura relativa */
+  max-width: 1400px; /* Largura máxima */
+  margin: 0 auto; /* Centraliza o contêiner horizontalmente */
+  display: flex;
+  flex-direction: column; /* Alinha os gráficos verticalmente */
+  justify-content: center; /* Centraliza os gráficos verticalmente */
+  align-items: center; /* Centraliza os gráficos horizontalmente */
+}
+
+
+.graphs {
+  display: flex; /* Usa Flexbox para organizar os gráficos */
+  flex-wrap: nowrap; /* Impede que os gráficos quebrem para a próxima linha */
+  gap: 20px; /* Define o espaçamento entre os gráficos */
+  justify-content: center; /* Distribui os gráficos uniformemente */
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* ====== Estilo base das caixas brancas que contêm os gráficos ====== */
+.graph-card {
+  flex: 1.5; /* Aumenta a proporção do espaço ocupado pelo gráfico */
+  padding: 50px;
+  height: 530px;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.graph-card canvas {
+  width: 650px ;
+  height: 650px ;
+}
+
+/* ====== Submenu: utilizado para dropdowns no menu lateral ====== */
+.submenu {
+  display: none; /* Esconde o submenu por padrão */
+  list-style: none; /* Remove os marcadores da lista */
+  padding-left: 20px; /* Adiciona espaço à esquerda */
+  margin-top: 10px; /* Adiciona espaço acima do submenu */
+  position: relative; /* Mantém o submenu posicionado em relação ao item pai */
+  top: 0; /* Define a posição vertical */
+}
+
+/* Links dentro do submenu */
+.submenu a {
+  color: #ffffff; /* Define a cor do texto como branco */
+  text-decoration: none; /* Remove o sublinhado dos links */
+  font-size: 14px; /* Define o tamanho da fonte */
+}
+
+.submenu a:hover {
+  text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
+
+/* Botão de dropdown com efeito visual ao passar o rato */
+.dropdown-btn:hover {
+  text-decoration: underline;
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+.dropdown-btn:hover .arrow {
+  transform: rotate(180deg);
+}

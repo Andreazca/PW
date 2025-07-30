@@ -1,0 +1,280 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #e8e1d2;
+  display: flex;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+header {
+  width: 100vw;
+  background-color: #1a3d63;
+  padding: 14px 30px;
+  min-height: 60px;
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.sidebar {
+  width: 300px;
+  background-color: #1a3d63;
+  color: white;
+  height: calc(100vh - 80px);
+  margin-top: 80px;
+  padding: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.sidebar h2 {
+  font-size: 18px;
+  margin-bottom: 70px;
+  text-align: center;
+}
+
+.sidebar .section-title {
+  font-size: 12px;
+  color: #b0b0b0;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 15px;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  padding: 5px 10px;
+  width: 100%;
+}
+
+.sidebar ul li a .icon {
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+}
+
+.sidebar ul li a .arrow {
+  margin-left: auto;
+  font-size: 16px;
+  display: inline-block;
+  align-self: center;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.3s;
+}
+
+.sidebar ul li a:hover {
+  text-decoration: underline;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.arrow {
+  margin-left: auto;
+  font-size: 16px;
+  display: inline-block;
+  align-self: center;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.3s;
+}
+
+/* Espaçamento lateral do conteúdo principal da página */
+.main-content {
+  max-width: none; /* Ajusta aqui a largura total da caixa branca */
+  margin: 0 auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  /* Para ajustar o espaço acima e abaixo da caixa branca, altere estes valores: */
+  padding-top: 60px;    /* distância do topo da página até ao início da caixa branca */
+  padding-bottom: 60px; /* distância do fim da caixa branca até ao fundo da página */
+  box-sizing: border-box;
+  align-items: stretch;
+  background: #e8e1d2;
+}
+
+/* Título da página - alinhado à esquerda, alinhado com o container */
+.page-title {
+  font-size: 34px;
+  color: #1a3d63;
+  font-weight: bold;
+  padding-top: 40px;
+  padding-bottom: 20px;
+  padding-left: 0;
+  padding-right: 0;
+  text-align: left;
+  margin: 0 auto 0 auto;
+  max-width: 1160px; /* Igual ao dos gráficos */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Espaçamento lateral do container branco do formulário */
+.form-container {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.10);
+  max-width: 1160px;      /* aumenta o comprimento/largura máxima */
+  width: 100%;
+  min-width: 320px;
+  min-height: 710px;      /* aumenta a altura mínima */
+  margin: 15px auto 0 auto; /* mais espaço em cima */
+  padding: 30px 30px 30px 30px; /* mais espaçamento interno */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  box-sizing: border-box;
+  overflow-y: visible;
+  height: auto;
+}
+
+.dropdown-btn {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.submenu {
+  display: none;
+  list-style: none;
+  padding-left: 20px;
+  margin-top: 10px;
+  position: relative;
+  top: 0;
+}
+
+.submenu a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.submenu a:hover {
+  text-decoration: underline;
+}
+
+/* Título dentro da caixa branca, alinhado com o conteúdo */
+.form-container h2 {
+  color: #1a3d63;
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 10px;
+  text-align: left;
+  letter-spacing: 0.5px;
+  padding-left: 0;
+}
+
+/* Linha divisória acompanha o conteúdo interno */
+.divider {
+  border: none;
+  border-top: 4px solid #f9b300;
+  margin-bottom: 28px;
+  margin-top: 0;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Tabela de custos */
+#tabelaCustos {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  font-size: 16px;
+  background-color: white;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(26,61,99,0.06);
+  overflow: hidden;
+  table-layout: fixed;
+}
+
+/* Cabeçalho da tabela */
+#tabelaCustos thead th {
+   background: #f9b300;
+  color: #1a3d63;
+  font-size: 18px;
+  padding: 9px 18px;
+  font-weight: bold;
+  border: none;
+  text-align: center;
+  border-radius: 0;
+  letter-spacing: 0.5px;
+  border-bottom: 3px solid #ffb84d;
+  box-shadow: none;
+  line-height: 1.4;
+}
+
+/* Células da tabela */
+#tabelaCustos tbody td {
+  background-color: #f6f8fa;
+  color: #1a3d63;
+  padding: 15px 20px;
+  text-align: center;
+  border-radius: 8px;
+  word-break: break-word;
+  line-height: 1.4;
+}
+
+/* Efeito hover nas linhas */
+#tabelaCustos tbody tr:hover td {
+  background-color: #fff3e0;
+}
+
+/* Ajuste responsivo simples */
+@media (max-width: 900px) {
+  .main-content {
+    padding: 20px 20px 40px 20px;
+  }
+
+  .form-container {
+    padding: 20px;
+    max-width: 95vw;
+  }
+
+  #tabelaCustos thead th,
+  #tabelaCustos tbody td {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  .page-title {
+    font-size: 24px;
+    padding-bottom: 15px;
+  }
+}

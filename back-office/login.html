@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <link rel="stylesheet" href="login.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="login-box">
+      <h2>LOGIN</h2>
+      <hr class="divider" />
+      <p class="subtext">Insira os seus dados de Administrador</p>
+
+      <div class="input-group">
+        <label for="email"><img src="username.svg" alt="ícone utilizador" class="icon" /></label>
+        <input type="email" id="email" placeholder="Email" />
+      </div>
+
+      <div class="input-group">
+        <label for="password"><img src="pass.svg" alt="password utilizador" class="icon" /></label>
+        <input type="password" id="password" placeholder="Password" />
+      </div>
+
+      <div class="forgot-password">
+        <a href="#">Esqueceu-se da sua password?</a>
+      </div>
+
+      <button class="btn" onclick="login()">Entrar</button>
+
+      <div id="google-login-button"></div>
+    </div>
+  </div>
+
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script src="login.js"></script>
+</body>
+</html>

@@ -1,0 +1,573 @@
+* {
+  box-sizing: border-box;
+}
+
+/* Estilo geral do corpo da página */
+body {
+  margin: 0; /* Remove margens padrão */
+  font-family: 'Segoe UI', sans-serif; /* Define a fonte padrão */
+  background-color: #e8e1d2; /* Define a cor de fundo */
+  display: flex; /* Usa flexbox para layout */
+  height: 100vh; /* Define a altura total da janela */
+  overflow-x: hidden; /* Impede rolagem horizontal */
+  overflow-y: auto; /* Permite rolagem vertical */
+}
+
+/* Cabeçalho fixo no topo da página */
+header {
+  width: 100vw; /* Ocupa toda a largura da janela */
+  background-color: #1a3d63; /* Cor de fundo do cabeçalho */
+  padding: 14px 30px; /* Espaçamento interno */
+  min-height: 60px; /* Define uma altura mínima */
+  color: white; /* Cor do texto */
+  display: flex; /* Usa flexbox para alinhamento */
+  justify-content: flex-end; /* Alinha o conteúdo à direita */
+  align-items: center; /* Centraliza verticalmente */
+  position: fixed; /* Fixa o cabeçalho no topo */
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Garante que o cabeçalho fique acima de outros elementos */
+}
+
+/* Estilo do menu lateral */
+.sidebar {
+  width: 300px; /* Largura fixa */
+  background-color: #1a3d63; /* Cor de fundo */
+  color: white; /* Cor do texto */
+  height: calc(100vh - 80px); /* Altura total menos o cabeçalho */
+  margin-top: 80px; /* Espaço abaixo do cabeçalho */
+  padding: 20px; /* Espaçamento interno */
+  border-top-right-radius: 20px; /* Bordas arredondadas no topo */
+  border-bottom-right-radius: 20px; /* Bordas arredondadas na base */
+}
+
+/* Título principal do menu lateral */
+.sidebar h2 {
+  font-size: 18px; /* Tamanho da fonte */
+  margin-bottom: 70px; /* Espaçamento inferior */
+  text-align: center; /* Centraliza o texto */
+}
+
+/* Títulos das seções no menu lateral */
+.sidebar .section-title {
+  font-size: 12px; 
+  color: #b0b0b0; 
+  margin-top: 30px; /* Espaçamento superior */
+  margin-bottom: 15px; /* Espaçamento inferior */
+  text-transform: uppercase; /* Texto em maiúsculas */
+  font-weight: normal; /* Peso normal */
+}
+
+/* Lista de itens do menu */
+.sidebar ul {
+  list-style: none; /* Remove marcadores */
+  padding: 0; /* Remove padding */
+}
+
+/* Estilo dos itens do menu */
+.sidebar ul li {
+  margin-bottom: 15px; /* Espaçamento inferior */
+  font-size: 15px; /* Tamanho da fonte */
+  display: flex; /* Flexbox para alinhamento */
+  flex-direction: column; /* Alinha itens verticalmente */
+  align-items: center; /* Centraliza os itens */
+}
+
+/* Links dentro do menu */
+.sidebar ul li a {
+  color: white; /* Cor do texto */
+  text-decoration: none; /* Remove sublinhado */
+  display: flex; /* Flexbox para alinhamento */
+  align-items: center; /* Centraliza verticalmente */
+  font-size: 15px; /* Tamanho da fonte */
+  padding: 5px 10px; /* Espaçamento interno */
+  width: 100%; /* Ocupa toda a largura */
+}
+
+/* Ícones dentro dos links */
+.sidebar ul li a .icon {
+  margin-right: 10px; /* Espaço entre ícone e texto */
+  width: 20px; /* Largura do ícone */
+  height: 20px; /* Altura do ícone */
+}
+
+/* Seta para dropdown */
+.sidebar ul li a .arrow {
+  margin-left: auto; /* Empurra para a direita */
+  font-size: 16px; /* Tamanho da seta */
+  display: inline-block; /* Garante que a seta não afete o layout */
+  align-self: center; /* Centraliza verticalmente */
+  cursor: pointer; /* Cursor de ponteiro */
+  user-select: none; /* Impede seleção */
+  transition: transform 0.3s;
+}
+
+/* Efeito ao passar o mouse nos links */
+.sidebar ul li a:hover {
+  text-decoration: underline; /* Adiciona sublinhado */
+}
+
+/* Ícones dentro dos links */
+.icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px; /* Espaço entre ícone e texto */
+}
+
+/* Seta para dropdown */
+.arrow {
+  margin-left: auto; /* Empurra a seta para a extremidade direita */
+  font-size: 16px; /* Tamanho da seta */
+  display: inline-block; /* Garante que a seta não afete o layout */
+  align-self: center; /* Centraliza verticalmente */
+  cursor: pointer; /* Mostra o cursor de ponteiro */
+  user-select: none; /* Impede que a seta seja selecionada */
+  transition: transform 0.3s;
+}
+
+/* Conteúdo principal igual aos dashboards */
+.main-content {
+  flex: 1; /* Ocupa o espaço restante */
+  display: flex; /* Usa flexbox para layout */
+  flex-direction: column; /* Alinha itens verticalmente */
+  padding-top: 60px; /* Espaçamento superior */
+  padding-bottom: 60px; /* Espaçamento inferior */
+  padding-left: 80px; /* Espaçamento à esquerda */
+  padding-right: 80px; /* Espaçamento à direita */
+  box-sizing: border-box; /* Inclui padding e borda no tamanho */
+  align-items: stretch; /* Estica os itens para preencher o container */
+}
+
+/* Título da página - alinhado à esquerda */
+.page-title {
+  font-size: 34px;
+  color: #1a3d63;
+  font-weight: bold;
+  padding: 20px 0;
+  text-align: left;
+  margin-bottom: 0; /* Adicione ou ajuste para remover espaço extra abaixo do título */
+}
+
+/* Botão de dropdown */
+.dropdown-btn {
+  cursor: pointer; /* Cursor de ponteiro */
+  display: flex; /* Flexbox para alinhamento */
+  justify-content: space-between; /* Espaça os itens horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+}
+
+/* Container central igual ao dashboard */
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px; /* Espaço lateral igual ao dashboard/graficos */
+  width: 100%;
+  box-sizing: border-box;
+  align-items: stretch;
+}
+
+/* Caixa branca para a tabela, igual ao .graph-bar dos dashboards */
+.form-container {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+  max-width: 1000px;
+  width: 100%;    /* Não centraliza */
+  padding: 10px 0;     /* Remove padding lateral */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  box-sizing: border-box;
+  overflow-y: visible;
+  height: auto; /* altura automática, cresce conforme o conteúdo */
+  padding-top: 10px;
+  min-width: 100%;
+  margin: -15px auto 0px auto; /* Reduza o margin-top para 0 para colar ao título */
+}
+
+/* Título da tabela */
+.form-container h2 {
+  color: #1a3d63;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 28px;
+  text-align: left;
+}
+
+/* Tabela ocupa quase toda a largura da caixa, com espaço branco nas laterais */
+#tabelaAuditorias {
+  table-layout: auto; /* Permite colunas crescerem conforme o conteúdo */
+  width: 97%; /* Deixa um pequeno espaço branco nas laterais dentro da caixa branca */
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: separate;
+  border-spacing: 0 8px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(26,61,99,0.06);
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+  word-break: break-word; /* Quebra palavras longas */
+}
+
+/* Larguras proporcionais das colunas para ocupar toda a largura */
+#tabelaAuditorias th:nth-child(1),
+#tabelaAuditorias td:nth-child(1) { width: 10%; }
+#tabelaAuditorias th:nth-child(2),
+#tabelaAuditorias td:nth-child(2) { width: 15%; }
+#tabelaAuditorias th:nth-child(3),
+#tabelaAuditorias td:nth-child(3) { width: 15%; }
+#tabelaAuditorias th:nth-child(4),
+#tabelaAuditorias td:nth-child(4) { width: 15%; }
+#tabelaAuditorias th:nth-child(5),
+#tabelaAuditorias td:nth-child(5) { width: 15%; }
+#tabelaAuditorias th:nth-child(6),
+#tabelaAuditorias td:nth-child(6) { width: 10%; }
+
+#tabelaAuditorias th,
+
+#tabelaAuditorias th {
+  background: #f9b300;
+  color: #1a3d63;
+  font-size: 18px;           
+  padding: 9px 18px;      /* Reduz o espaço do cabeçalho */
+  font-weight: bold;
+  border: none;
+  text-align: center;
+  border-radius: 0; /* Remove cantos arredondados */
+  letter-spacing: 0.5px;
+  border-bottom: 3px solid #ffb84d; /* Linha mais alaranjada, suave e destacada */
+  box-shadow: none;
+  line-height: 1.4;
+}
+
+#tabelaAuditorias td {
+  background: #f6f8fa;
+  color: #1a3d63;
+  font-size: 17px;
+  padding: 7px 18px;
+  text-align: center;
+  border: none;
+  border-radius: 0;          /* Remove arredondamento extra */
+  box-shadow: none;          /* Remove sombra interna das células */
+  transition: background 0.2s;
+  white-space: normal;      /* Permite quebra de linha */
+  overflow-wrap: break-word;/* Quebra palavras longas */
+  word-break: break-word;   /* Garante quebra em todas as situações */
+  max-width: 220px;         /* Limita largura de cada célula para evitar corte visual */
+  line-height: 1.4;
+}
+
+#tabelaAuditorias tr:hover td {
+  background: #fff3e0;
+}
+
+#tabelaAuditorias td:last-child {
+  text-align: center;
+}
+
+/* Mensagem de tabela vazia: sem hover, sem linha amarela, sem bold */
+.tabela-vazia {
+   text-align: center;
+  color: #1a3d63;
+  font-size: 18px;
+  font-weight: normal;
+  padding: 20px 0;
+  letter-spacing: 0.5px;
+  background: none;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  opacity: 0.85;
+}
+
+.tabela-vazia::after {
+  display: none;
+  content: none;
+}
+
+/* Remove hover para linha vazia */
+#tabelaAuditorias tr:hover .tabela-vazia {
+  background: none;
+}
+
+/* Botão de finalizar auditoria */
+.btn-finalizar {
+  padding: 10px 20px;
+  background: linear-gradient(90deg, #43a047 0%, #4CAF50 100%);
+  color: #fff;
+  font-weight: 600;
+  font-size: 18px;
+  border: 1.5px solid #2e7031;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(67,160,71,0.08);
+  transition: background 0.18s, box-shadow 0.18s, transform 0.12s, border-color 0.18s;
+  letter-spacing: 0.2px;
+  outline: none;
+  margin: 0;
+  min-width: 80px;
+}
+
+.btn-finalizar:hover, .btn-finalizar:focus {
+  background: linear-gradient(90deg, #388e3c 0%, #43a047 100%);
+  border-color: #205522;
+  box-shadow: 0 2px 8px rgba(67,160,71,0.13);
+  transform: translateY(-1px) scale(1.03);
+}
+
+
+/* Responsividade para ecrãs pequenos */
+@media (max-width: 700px) {
+  .main-content {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .form-container {
+    padding: 24px 8px;
+    max-width: 98vw;
+    height: auto;
+  }
+  #tabelaAuditorias th, #tabelaAuditorias td {
+    font-size: 14px;
+    padding: 6px 8px;
+  }
+  .page-title {
+    font-size: 22px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+  }
+}
+
+/* .dropdown-btn:hover .arrow só precisa de uma definição */
+.dropdown-btn:hover .arrow {
+  transform: rotate(180deg);
+}
+
+/* .submenu só precisa de uma definição */
+.submenu {
+  display: none;
+  list-style: none;
+  padding-left: 20px;
+  margin-top: 10px;
+  position: relative;
+  top: 0;
+}
+
+/* .submenu a só precisa de uma definição */
+.submenu a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* .submenu a:hover só precisa de uma definição */
+.submenu a:hover {
+  text-decoration: underline;
+}
+* {
+  box-sizing: border-box;
+}
+
+/* Estilo geral do corpo da página */
+body {
+  margin: 0; /* Remove margens padrão */
+  font-family: 'Segoe UI', sans-serif; /* Define a fonte padrão */
+  background-color: #e8e1d2; /* Define a cor de fundo */
+  display: flex; /* Usa flexbox para layout */
+  height: 100vh; /* Define a altura total da janela */
+  overflow-x: hidden; /* Impede rolagem horizontal */
+  overflow-y: auto; /* Permite rolagem vertical */
+}
+
+/* Cabeçalho fixo no topo da página */
+header {
+  width: 100vw; /* Ocupa toda a largura da janela */
+  background-color: #1a3d63; /* Cor de fundo do cabeçalho */
+  padding: 14px 30px; /* Espaçamento interno */
+  min-height: 60px; /* Define uma altura mínima */
+  color: white; /* Cor do texto */
+  display: flex; /* Usa flexbox para alinhamento */
+  justify-content: flex-end; /* Alinha o conteúdo à direita */
+  align-items: center; /* Centraliza verticalmente */
+  position: fixed; /* Fixa o cabeçalho no topo */
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Garante que o cabeçalho fique acima de outros elementos */
+  border-bottom: 2px solid #2566a6;
+}
+
+/* Estilo do menu lateral */
+.sidebar {
+  width: 300px; /* Largura fixa */
+  background-color: #1a3d63; /* Cor de fundo */
+  color: white; /* Cor do texto */
+  height: calc(100vh - 80px); /* Altura total menos o cabeçalho */
+  margin-top: 80px; /* Espaço abaixo do cabeçalho */
+  padding: 20px; /* Espaçamento interno */
+  border-top-right-radius: 20px; /* Bordas arredondadas no topo */
+  border-bottom-right-radius: 20px; /* Bordas arredondadas na base */
+}
+
+/* Título principal do menu lateral */
+.sidebar h2 {
+  font-size: 18px; /* Tamanho da fonte */
+  margin-bottom: 70px; /* Espaçamento inferior */
+  text-align: center; /* Centraliza o texto */
+}
+
+/* Títulos das seções no menu lateral */
+.sidebar .section-title {
+  font-size: 12px; 
+  margin-top: 30px; /* Espaçamento superior */
+  margin-bottom: 15px; /* Espaçamento inferior */
+  text-transform: uppercase; /* Texto em maiúsculas */
+  font-weight: normal; /* Peso normal */
+}
+
+/* Lista de itens do menu */
+.sidebar ul {
+  list-style: none; /* Remove marcadores */
+  padding: 0; /* Remove padding */
+}
+
+/* Estilo dos itens do menu */
+.sidebar ul li {
+  margin-bottom: 15px; /* Espaçamento inferior */
+  font-size: 15px; /* Tamanho da fonte */
+  display: flex; /* Flexbox para alinhamento */
+  flex-direction: column; /* Alinha itens verticalmente */
+  align-items: center; /* Centraliza os itens */
+}
+
+/* Links dentro do menu */
+.sidebar ul li a {
+  color: white; /* Cor do texto */
+  text-decoration: none; /* Remove sublinhado */
+  display: flex; /* Flexbox para alinhamento */
+  align-items: center; /* Centraliza verticalmente */
+  font-size: 15px; /* Tamanho da fonte */
+  padding: 5px 10px; /* Espaçamento interno */
+  width: 100%; /* Ocupa toda a largura */
+}
+
+/* Ícones dentro dos links */
+.sidebar ul li a .icon {
+  margin-right: 10px; /* Espaço entre ícone e texto */
+  width: 20px; /* Largura do ícone */
+  height: 20px; /* Altura do ícone */
+}
+
+/* Seta para dropdown */
+.sidebar ul li a .arrow {
+  margin-left: auto; /* Empurra para a direita */
+  font-size: 16px; /* Tamanho da seta */
+  display: inline-block; /* Garante que a seta não afete o layout */
+  align-self: center; /* Centraliza verticalmente */
+  cursor: pointer; /* Cursor de ponteiro */
+  user-select: none; /* Impede seleção */
+  transition: transform 0.3s;
+}
+
+/* Efeito ao passar o mouse nos links */
+.sidebar ul li a:hover {
+  text-decoration: underline; /* Adiciona sublinhado */
+}
+
+/* Ícones dentro dos links */
+.icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px; /* Espaço entre ícone e texto */
+}
+
+/* Seta para dropdown */
+.arrow {
+  margin-left: auto; /* Empurra a seta para a extremidade direita */
+  font-size: 16px; /* Tamanho da seta */
+  display: inline-block; /* Garante que a seta não afete o layout */
+  align-self: center; /* Centraliza verticalmente */
+  cursor: pointer; /* Mostra o cursor de ponteiro */
+  user-select: none; /* Impede que a seta seja selecionada */
+  transition: transform 0.3s;
+}
+
+/* Conteúdo principal igual aos dashboards */
+.main-content {
+  flex: 1; /* Ocupa o espaço restante */
+  display: flex; /* Usa flexbox para layout */
+  flex-direction: column; /* Alinha itens verticalmente */
+  padding-top: 60px; /* Espaçamento superior */
+  padding-bottom: 60px; /* Espaçamento inferior */
+  padding-left: 80px; /* Espaçamento à esquerda */
+  padding-right: 80px; /* Espaçamento à direita */
+  box-sizing: border-box; /* Inclui padding e borda no tamanho */
+  align-items: stretch; /* Estica os itens para preencher o container */
+}
+
+/* Título da página - alinhado à esquerda */
+.page-title {
+  font-size: 34px;
+  color: #1a3d63;
+  font-weight: bold;
+  padding: 20px 0;
+  text-align: left;
+  margin-bottom: 0; /* Adicione ou ajuste para remover espaço extra abaixo do título */
+}
+
+/* Botão de dropdown */
+.dropdown-btn {
+  cursor: pointer; /* Cursor de ponteiro */
+  display: flex; /* Flexbox para alinhamento */
+  justify-content: space-between; /* Espaça os itens horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+}
+
+/* Container central igual ao dashboard */
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px; /* Espaço lateral igual ao dashboard/graficos */
+  width: 100%;
+  box-sizing: border-box;
+  align-items: stretch;
+}
+
+/* Caixa branca para a tabela, igual ao .graph-bar dos dashboards */
+.form-container {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+  max-width: 1000px;
+  width: 100%;    /* Não centraliza */
+  padding: 10px 0;     /* Remove padding lateral */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  box-sizing: border-box;
+  overflow-y: visible;
+  height: auto; /* altura automática, cresce conforme o conteúdo */
+  padding-top: 10px;
+  min-width: 100%;
+  margin: -15px auto 0px auto; /* Reduza o margin-top para 0 para colar ao título */
+}
+
+/* Título da tabela */
+.form-container h2 {
+  color: #1a3d63;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 28px;
+  text-align: left;
+}
+

@@ -1,0 +1,418 @@
+/* Define o box-sizing para incluir padding e bordas no tamanho total dos elementos */
+* {
+  box-sizing: border-box;
+}
+
+/* Estilo geral do corpo da página */
+body {
+  margin: 0; /* Remove margens padrão */
+  font-family: 'Segoe UI', sans-serif; /* Define a fonte padrão */
+  background-color: #e8e1d2; /* Define a cor de fundo */
+  display: flex; /* Usa flexbox para layout */
+  height: 100vh; /* Define a altura total da janela */
+  overflow-x: hidden; /* Impede rolagem horizontal */
+  overflow-y: auto; /* Permite rolagem vertical */
+}
+
+/* Cabeçalho fixo no topo da página */
+header {
+  width: 100vw; /* Ocupa toda a largura da janela */
+  background-color: #1a3d63; /* Cor de fundo do cabeçalho */
+  padding: 14px 30px; /* Espaçamento interno */
+  min-height: 60px; /* Define uma altura mínima */
+  color: white; /* Cor do texto */
+  display: flex; /* Usa flexbox para alinhamento */
+  justify-content: flex-end; /* Alinha o conteúdo à direita */
+  align-items: center; /* Centraliza verticalmente */
+  position: fixed; /* Fixa o cabeçalho no topo */
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Garante que o cabeçalho fique acima de outros elementos */
+}
+
+/* Estilo do menu lateral */
+.sidebar {
+  width: 300px; /* Define a largura fixa */
+  background-color: #1a3d63; /* Cor de fundo do menu */
+  color: white; /* Cor do texto */
+  height: calc(100vh - 80px); /* Altura total menos o cabeçalho */
+  margin-top: 80px; /* Espaço abaixo do cabeçalho */
+  padding: 20px; /* Espaçamento interno */
+  border-top-right-radius: 20px; /* Bordas arredondadas no topo direito */
+  border-bottom-right-radius: 20px; /* Bordas arredondadas na base direita */
+  flex-shrink: 0; /* Impede que o menu encolha */
+   max-height: 100vh;   /* Limita a altura ao tamanho da janela */
+  overflow-y: auto;
+}
+
+/* Título principal do menu lateral */
+.sidebar h2 {
+  font-size: 18px; /* Tamanho da fonte */
+  margin-bottom: 70px; /* Espaçamento inferior */
+  text-align: center; /* Centraliza o texto */
+}
+
+/* Títulos das seções no menu lateral */
+.sidebar .section-title {
+  font-size: 12px; /* Tamanho menor para os títulos */
+  color: #b0b0b0; /* Cor diferenciada para os títulos */
+  margin-top: 30px; /* Espaçamento superior */
+  margin-bottom: 15px; /* Espaçamento inferior */
+  text-transform: uppercase; /* Converte o texto para maiúsculas */
+  font-weight: normal; /* Define o peso da fonte como normal */
+}
+
+/* Lista de itens do menu */
+.sidebar ul {
+  list-style: none; /* Remove marcadores da lista */
+  padding: 0; /* Remove padding padrão */
+}
+
+/* Estilo dos itens do menu */
+.sidebar ul li {
+  margin-bottom: 15px; /* Espaçamento inferior entre os itens */
+  font-size: 15px; /* Tamanho da fonte */
+  display: flex; /* Usa flexbox para alinhamento */
+  flex-direction: column; /* Alinha os itens verticalmente */
+  align-items: center; /* Centraliza os itens */
+}
+
+/* Links dentro do menu */
+.sidebar ul li a {
+  color: white; /* Cor do texto */
+  text-decoration: none; /* Remove sublinhado */
+  display: flex; /* Usa flexbox para alinhamento */
+  align-items: center; /* Centraliza verticalmente */
+  font-size: 15px; /* Tamanho da fonte */
+  padding: 5px 10px; /* Espaçamento interno */
+  width: 100%; /* Ocupa toda a largura do item */
+}
+
+/* Ícones dentro dos links */
+.icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px; /* Espaço entre ícone e texto */
+}
+
+/* Seta para dropdown */
+.sidebar ul li a .arrow {
+  margin-left: auto; /* Empurra a seta para a extremidade direita */
+  font-size: 16px; /* Tamanho da seta */
+  display: inline-block; /* Garante que a seta não afete o layout */
+  align-self: center; /* Centraliza verticalmente */
+  cursor: pointer; /* Mostra o cursor de ponteiro */
+  user-select: none; /* Impede que a seta seja selecionada */
+}
+
+/* Efeito ao passar o mouse nos links */
+.sidebar ul li a:hover {
+  text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
+
+/* Conteúdo principal da página */
+.main-content {
+  flex: 1; /* Ocupa o espaço restante */
+  display: flex; /* Usa flexbox para layout */
+  flex-direction: column; /* Alinha itens verticalmente */
+  padding-top: 60px; /* Espaçamento superior */
+  padding-bottom: 60px; /* Espaçamento inferior */
+  padding-left: 80px; /* Espaçamento à esquerda */
+  padding-right: 80px; /* Espaçamento à direita */
+}
+
+/* Título da página */
+.page-title {
+  font-size: 34px;
+  color: #1a3d63;
+  font-weight: bold;
+  padding: 20px 0; /* Remova padding lateral */
+  text-align: left;
+}
+
+
+/* Indicadores no topo */
+.indicadores {
+  display: flex; /* Flexbox para layout */
+  justify-content: flex-start; /* Alinha à esquerda */
+  gap: 20px; /* Espaçamento entre os indicadores */
+  flex-wrap: wrap; /* Permite quebra de linha */
+  margin-bottom: 30px; /* Espaçamento inferior */
+  margin-top: 10px; /* Espaçamento superior */
+}
+
+/* Estilo das caixas de indicadores */
+.caixa {
+  background: white; /* Fundo branco */
+  border-radius: 15px; /* Bordas arredondadas */
+  padding: 20px; /* Espaçamento interno */
+  width: 180px; /* Largura fixa */
+  text-align: center; /* Centraliza o texto */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Sombra */
+}
+
+/* Ícones dentro das caixas */
+.caixa .icon {
+  width: 32px; /* Largura do ícone */
+  height: 32px; /* Altura do ícone */
+  margin: 0 auto 10px auto; /* Centraliza o ícone */
+}
+
+/* Título dentro das caixas */
+.caixa .titulo {
+  display: block; /* Exibe como bloco */
+  font-size: 14px; /* Tamanho da fonte */
+  color: #1a3d63; /* Cor do texto */
+  font-weight: bold; /* Negrito */
+}
+
+/* Valores dentro das caixas */
+.caixa .valor {
+  font-size: 18px; /* Tamanho da fonte */
+  font-weight: bold; /* Negrito */
+  color: #333; /* Cor do texto */
+}
+
+/* Contêiner principal dos gráficos */
+.graficos {
+  display: flex; /* Flexbox para layout */
+  flex-direction: row; /* Alinha gráficos lado a lado */
+  gap: 10px; /* Espaçamento entre gráficos */
+}
+
+/* Gráfico de barras maior */
+.grafico-grande {
+  flex: 6; /* Ocupa mais espaço */
+  background: white; /* Fundo branco */
+  padding: 20px; /* Espaçamento interno */
+  border-radius: 20px; /* Bordas arredondadas */
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1); /* Sombra */
+  height: 460px; /* Altura fixa */
+}
+
+/* Contêiner para gráficos pequenos */
+.graficos-secundarios {
+  flex: 5; /* Ocupa menos espaço */
+  display: flex; /* Flexbox para layout */
+  flex-direction: column; /* Alinha gráficos verticalmente */
+  gap: 30px; /* Espaçamento entre gráficos */
+  justify-content: space-between; /* Espaçamento uniforme */
+}
+
+/* Estilo dos gráficos pequenos */
+.grafico-pequeno {
+  background: white; /* Fundo branco */
+  padding: 20px; /* Espaçamento interno */
+  border-radius: 20px; /* Bordas arredondadas */
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1); /* Sombra */
+  height: calc((460px - 30px) / 2); /* Altura proporcional */
+  display: flex; /* Flexbox para alinhamento */
+  flex-direction: column; /* Alinha itens verticalmente */
+  justify-content: center; /* Centraliza verticalmente */
+}
+
+/* Contêiner principal dos indicadores + gráficos */
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 1200px; /* Largura máxima */
+  margin: 20px auto; /* Centraliza horizontalmente */
+  padding: 0 20px; /* Espaçamento interno */
+}
+
+/* Indicadores no topo */
+.metric-cards {
+  display: flex;
+  justify-content: flex-start;
+  gap: 15px;
+  flex-wrap: nowrap;
+  margin-bottom: 30px;
+  margin-top: -20px;
+}
+
+.metric-card {
+  background-color: white;
+  border-radius: 16px;
+  width: 220px;
+  height: 130px;
+  padding: 15px 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+
+  /* Forçar layout interno */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.metric-card img {
+  width: 34px;
+  height: 34px;
+  margin-bottom: 10px;
+}
+
+/* Título com altura mínima fixa */
+.metric-card h4 {
+  font-size: 13px;
+  margin: 0;
+  color: #1a3d63;
+  font-weight: bold;
+  min-height: 32px; /* Garante que todas as linhas fiquem alinhadas */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Valor em baixo */
+.metric-card p {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+  margin-top: auto;
+}
+
+/* Secção dos gráficos */
+.graph-section {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start; /* Alinha ao topo */
+  gap: 20px;
+  width: 100%;
+  max-width: 100%;
+  margin-top: -40px;
+}
+
+/* Gráfico de pizza à esquerda */
+.graph-bar {
+  flex: 1.2;
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+  height: 580px;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Gráficos pequenos empilhados à direita */
+.graph-smalls,
+.graph-smalls-vertical {
+  flex: 0.9;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: flex-start;
+  min-width: 320px;
+  max-width: 380px;
+  height: 580px;
+}
+
+.graph-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+  height: 50%; /* Divide igualmente o espaço vertical */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Gráfico de pizza (ajustado para menor largura) */
+.graph-bar canvas#graficoPizza {
+  width: 90% !important;
+  height: auto !important;
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+/* Gráficos pequenos */
+.graph-smalls {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: space-between;
+  min-width: 360px;
+  max-width: 380px;
+}
+
+.graph-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+  height: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.graph-card canvas {
+  width: 100% !important;
+  height: auto !important;
+  max-width: 250px; /* Ajusta a largura máxima */
+  margin: 0 auto; /* Centraliza o gráfico */
+}
+
+/* Gráfico de pizza (ajustado para menor tamanho) */
+.graph-bar canvas#graficoPizza {
+  width: 80% !important; /* Reduz a largura */
+  height: auto !important;
+  max-width: 500px; /* Define um limite máximo */
+  margin: 0 auto; /* Centraliza o gráfico */
+}
+
+/* Gráfico de barras (agora menor) */
+.graph-card canvas#graficoBarras {
+  width: 100% !important;
+  height: auto !important;
+  max-width: 250px;
+  margin: 0 auto;
+}
+
+/* Estilo dos submenus */
+.submenu {
+  display: none; /* Inicialmente oculto */
+  list-style: none; /* Remove marcadores */
+  padding-left: 20px; /* Alinhamento dos itens do submenu */
+  margin-top: 10px; /* Espaçamento superior */
+  position: relative; /* Mantém o submenu abaixo do item */
+  top: 0;
+}
+
+/* Links dentro dos submenus */
+.submenu a {
+  color: #ffffff; /* Cor do texto */
+  text-decoration: none; /* Remove sublinhado */
+  font-size: 14px; /* Tamanho da fonte */
+}
+
+/* Efeito ao passar o mouse nos links do submenu */
+.submenu a:hover {
+  text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
+
+/* Efeito de hover para o botão do dropdown */
+.dropdown-btn:hover {
+  text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
+
+.arrow {
+  transition: transform 0.3s ease; /* Adiciona animação ao rotacionar */
+}
+
+.dropdown-btn:hover .arrow {
+  transform: rotate(180deg); /* Rotaciona a seta ao passar o mouse */
+}
+
