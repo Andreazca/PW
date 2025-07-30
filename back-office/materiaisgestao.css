@@ -1,0 +1,114 @@
+@import url('registoperitos.css');
+  
+  .main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-left: 250px; /* O espaço para a sidebar */
+    padding-top: 60px;
+    padding-bottom: 60px; /* Mantendo a margem inferior */
+    padding-left: 80px; /* Adiciona a margem esquerda */
+    padding-right: 80px; /* Adiciona a margem direita */
+  }
+
+  .page-title {
+    margin: 0 auto;
+    font-size: 34px; /* Ajustando o tamanho da fonte */
+    color: #1a3d63;
+    font-weight: bold;
+    max-width: 100%; /* Certificando-se de que o título ocupa a largura total */
+    padding: 20px;
+    text-align: left; /* Alinhando o título à esquerda */
+    margin-left: -250px; /* Movendo o título mais para a esquerda */
+    padding-top: 40px;
+  }
+
+  .form-container {
+    background: white;
+    padding: 45px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 1000px;
+    min-height: 200px;
+    margin: 100px 80px 60px -80px; /* Ajusta a margem esquerda para movê-la mais para a esquerda */;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  
+  .form-container h2 {
+    color: #1a3d63;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+
+  .divider {
+    height: 3px;
+    background-color: #f9b300;
+    border: none;
+    margin: 5px 0 20px 0;
+  }
+
+  form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+
+  label {
+    font-weight: bold;
+    color: #1a3d63;
+    margin-bottom: 6px;
+  }
+
+  input, select, button {
+    padding: 10px;
+    border: 2px solid #c4c4c4;
+    border-radius: 6px;
+    background-color: #f0f6fc;
+    width: 100%;
+  }
+
+  
+
+  .form-actions {
+    grid-column: span 3;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    gap: 10px;
+  }
+
+  .btn-cancelar {
+    background-color: #f9b300;
+    color: #1a3d63;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  .btn-encomendar {
+    background-color: #487dda;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+
+  .btn-lista {
+    background-color: #f9b300;
+    color: #1a3d63;
+    padding: 20px 40px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+  }

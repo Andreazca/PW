@@ -1,0 +1,105 @@
+/* --- pedidospendentes.css atualizado --- */
+
+@import url('registoperitos.css');
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+th, td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
+
+thead {
+  background-color: #f9b300;
+  color: #1a3d63;
+}
+
+tr:hover {
+  background-color: #f0f6fc;
+}
+
+.btn-aprovar,
+.btn-rejeitar,
+.btn-devolver {
+  padding: 8px 14px;
+  margin: 2px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  font-size: 14px;
+}
+
+.btn-aprovar {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.btn-aprovar:hover {
+  background-color: #45a049;
+}
+
+.btn-rejeitar {
+  background-color: #f44336;
+  color: white;
+}
+
+.btn-rejeitar:hover {
+  background-color: #e53935;
+}
+
+.btn-devolver {
+  background-color: #ff9800;
+  color: white;
+}
+
+.btn-devolver:hover {
+  background-color: #fb8c00;
+}
+
+.pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.pagination button {
+  padding: 8px 12px;
+  border: none;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.pagination button.active {
+  background-color: #1a3d63;
+  color: white;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.search-container input[type="search"] {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.search-container img {
+  margin-left: 5px;
+  cursor: pointer;
+}
+

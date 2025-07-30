@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Custos</title>
+  <link rel="stylesheet" href="custos.css" />
+</head>
+<body>
+  <header>
+    <span style="margin-left: 5px;">
+      <span  width="30" height="30">
+  </header>
+
+  <div class="sidebar">
+    <h2>EYESEVERYWHERE</h2>
+    <div class="section-title">Main</div> <!-- Título "Main" -->
+    <ul>
+      <li class="dropdown">
+        <a href="javascript:void(0)" class="dropdown-btn">
+          <img src="dashboard.svg" alt="dashboard" class="icon" /> Dashboard
+          <img src="seta.svg" alt="seta" class="arrow"></a>
+        <ul class="submenu">
+          <li><a href="auditoriasarea.html">Auditorias</a></li>
+          <li><a href="num_ocorrencias.html">Ocorrências</a></li>
+          <li><a href="profissionais.html">Profissionais</a></li>
+          <li><a href="materiaisutilizados.html">Materiais</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="javascript:void(0)" class="dropdown-btn">
+          <img src="Auditorias.svg" alt="auditorias" class="icon" /> Auditorias
+          <img src="seta.svg" alt="seta" class="arrow"></a>
+        <ul class="submenu">
+          <li><a href=listaauditorias.html>Lista: Auditorias</a></li>
+          <li><a href=criarauditoria.html>Criar Auditoria</a></li>
+          <li><a href="auditoriasemprogresso.html">Em Progresso</a></li>
+        </ul>
+      </li>
+      <div class="section-title">Interface</div> <!-- Título "Interface" -->
+      <ul>
+      <li class="dropdown">
+        <a href="javascript:void(0)" class="dropdown-btn"> 
+          <img src="Pedidos.svg" alt="pedidos" class="icon" /> Pedidos
+          <img src="seta.svg" alt="seta" class="arrow"></a>
+        <ul class="submenu">
+          <li><a href=listaocorrencias.html>Lista: Ocorrências</a></li>
+          <li><a href=pedidospendentes.html>Pedidos Pendentes</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href=registoperitos.html>
+          <img src="Peritos.svg" alt="peritos" class="icon" /> Peritos</a>
+      </li>
+      <li class="dropdown">
+        <a href="javascript:void(0)" class="dropdown-btn">
+          <img src="Materiais.svg" alt="materiais" class="icon" /> Materiais
+          <img src="seta.svg" alt="seta" class="arrow">
+        </a>
+        <ul class="submenu">
+          <li><a href="materiaisgestao.html ">Lista: Materiais</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href=custos.html>
+          <img src="Custos.svg" alt="Custos" class="icon" /> Custos</a>
+      </li>
+      <li>
+        <a href=calendario.html>
+        <img src="Calendario.svg" alt="calendario" class="icon" /> Calendário</a>
+      </li>
+      <li>
+        <a href=notificacoes.html>
+        <img src="Notificacoes.svg" alt="notificacoes" class="icon" /> Notificações</a>
+      </li>
+    </ul>
+  </div>
+  <div class="main-content">
+    <div class="page-title">Custos</div>
+    <div class="form-container">
+      <h2>Custos: Detalhes</h2>
+      <table class="cost-table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Custo (€)</th>
+          </tr>
+        </thead>
+        <tbody>
+         
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="custos.js"></script>
+</body>
+</html>
+

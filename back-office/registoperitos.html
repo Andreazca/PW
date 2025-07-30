@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt"> <!-- Lingua portuguesa-->
+<head>
+  <!-- Configurações básicas da página -->
+  <meta charset="UTF-8" />  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registo de Peritos</title>
+  <!-- Link para o ficheiro de estilos -->
+  <link rel="stylesheet" href="registoperitos.css" />
+</head>
+<body>
+
+  
+  <header></header>
+
+<!-- Menu lateral -->
+<div class="sidebar">
+    
+  <h2>EYESEVERYWHERE</h2> <!-- Título da barra lateral -->
+  <!-- Secção "Main" -->
+  <div class="section-title">Main</div>
+  <ul>
+    <!-- Item do menu com submenu (Dashboard) -->
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropdown-btn">
+        <img src="dashboard.svg" alt="dashboard" class="icon" /> Dashboard
+        <img src="seta.svg" alt="seta" class="arrow"></a>
+      <ul class="submenu">
+        <!-- Subitens do Dashboard -->
+        <li><a href="auditoriasarea.html">Auditorias</a></li>
+        <li><a href="num_ocorrencias.html">Ocorrências</a></li>
+        <li><a href="http://localhost:5173/back-office/profissionais.html">Profissionais</a></li>
+        <li><a href="materiaisutilizados.html">Materiais</a></li>
+      </ul>
+    </li>
+
+      <!-- Item do menu com submenu (Auditorias) -->
+      <li class="dropdown">
+        <a href="javascript:void(0)" class="dropdown-btn">
+          <img src="Auditorias.svg" alt="auditorias" class="icon" /> Auditorias
+          <img src="seta.svg" alt="seta" class="arrow"></a>
+        <ul class="submenu">
+          <!-- Subitens de Auditorias -->
+          <li><a href="listaauditorias.html">Lista: Auditorias</a></li>
+          <li><a href="criarauditoria.html">Criar Auditoria</a></li>
+        </ul>
+      </li>
+
+      <!-- Secção "Interface" -->
+      <div class="section-title">Interface</div>
+      <ul>
+        <!-- Item do menu com submenu (Pedidos) -->
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropdown-btn"> 
+            <img src="Pedidos.svg" alt="pedidos" class="icon" /> Pedidos
+            <img src="seta.svg" alt="seta" class="arrow"></a>
+          <ul class="submenu">
+            <!-- Subitens de Pedidos -->
+            <li><a href="listaocorrencias.html">Lista: Ocorrências</a></li>
+            <li><a href="pedidospendentes.html">Pedidos Pendentes</a></li>
+          </ul>
+        </li>
+        <!-- Item do menu (Peritos) -->   
+        <li>
+          <a href="registoperitos.html">
+            <img src="Peritos.svg" alt="peritos" class="icon" /> Peritos</a>
+        </li>
+        <!-- Item do menu com submenu (Materiais) -->
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropdown-btn">
+            <img src="Materiais.svg" alt="materiais" class="icon" /> Materiais
+            <img src="seta.svg" alt="seta" class="arrow">
+          </a>
+          <ul class="submenu">
+            <li><a href="listamateriais.html">Lista: Materiais</a></li>
+          </ul>
+        </li>
+        <!-- Outros itens do menu -->
+        <li><a href="custos.html">
+          <img src="Custos.svg" alt="custos" class="icon" /> Custos</a>
+        </li>
+        <li><a href="calendario.html">
+          <img src="Calendario.svg" alt="calendario" class="icon" /> Calendário</a>
+        </li>
+        <li><a href="notificacoes.html">
+          <img src="Notificacoes.svg" alt="notificacoes" class="icon" /> Notificações</a>
+        </li>
+      </ul>
+    </ul>
+  </div>
+
+  <!-- Conteúdo principal -->
+  <div class="main-content">
+    <!-- Título da página -->
+    <div class="page-title">Registo de Peritos</div>
+
+    <!-- Formulário de registo -->
+    <div class="form-container">
+      <h2>Registo</h2>
+      <hr class="divider" />
+      <form id="formPeritos">
+        <!-- Campo para o nome -->
+        <div class="form-group">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" required>
+        </div>
+        <!-- Campo para o sobrenome -->
+        <div class="form-group">
+          <label for="sobrenome">Sobrenome</label>
+          <input type="text" id="sobrenome" required>
+        </div>
+        <!-- Campo para a data de nascimento -->
+        <div class="form-group">
+          <label for="data">Data de Nascimento</label>
+          <input type="date" id="data" required>
+        </div>
+        <!-- Campo para a morada -->
+        <div class="form-group">
+          <label for="morada">Morada</label>
+          <input type="text" id="morada" required>
+        </div>
+        <!-- Campo para o email -->
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" required>
+        </div>
+        <!-- Campo para o telemóvel -->
+        <div class="form-group">
+          <label for="telemovel">Telemóvel</label>
+          <input type="tel" id="telemovel" placeholder="+351" required>
+        </div>
+        <!-- Campo para selecionar a área -->
+        <div class="form-group">
+          <label for="area">Área</label>
+          <select id="area" required>
+            <option value="">Selecionar</option>
+            <option>Engenharia</option>
+            <option>Saúde</option>
+            <option>Tecnologia</option>
+          </select>
+        </div>
+        <!-- Campo para selecionar a especialidade -->
+        <div class="form-group">
+          <label for="especialidade">Especialidade</label>
+          <select id="especialidade" required>
+            <option value="">Selecionar</option>
+            <option>Auditoria</option>
+            <option>Inspeção</option>
+            <option>Análise</option>
+          </select>
+        </div>
+        <!-- Botões de ação -->
+        <div class="form-actions">
+          <button type="reset" class="btn-cancelar">Cancelar</button>
+          <button type="submit" class="btn-registar">Registar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Script para funcionalidades da página -->
+  <script src="registoperitos.js"></script>
+</body>
+</html>

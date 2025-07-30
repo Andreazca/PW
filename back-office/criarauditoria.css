@@ -1,0 +1,93 @@
+@import url('registoperitos.css');
+
+form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: bold;
+  color: #1a3d63;
+  margin-bottom: 6px;
+}
+
+input, select {
+  padding: 10px;
+  border: 2px solid #c4c4c4;
+  border-radius: 6px;
+  background-color: #f0f6fc;
+}
+
+select {
+  padding: 10px;
+  border: 2px solid #c4c4c4;
+  border-radius: 6px;
+  background-color: #f0f6fc;
+  font-size: 14px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none; /* Remove os botões de incremento no Chrome */
+  margin: 0;
+}
+
+select[multiple] {
+  height: 150px;
+  padding: 10px;
+  border: 2px solid #c4c4c4;
+  border-radius: 6px;
+  background-color: #f0f6fc;
+  font-size: 14px;
+  overflow-y: auto;
+}
+
+.form-actions {
+  grid-column: span 2;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.btn-cancelar {
+  background-color: #f9b300;
+  color: #604800;
+  border: none;
+  padding: 15px 30px; /* Padding dos botões */
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btn-registar {
+  background-color: #487dda;
+  color: #00337C;
+  border: none;
+  padding: 15px 30px; /* Padding dos botões */
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.submenu {
+  display: none; /* Submenus estão ocultos inicialmente */
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.arrow {
+  margin-left: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  user-select: none;
+}

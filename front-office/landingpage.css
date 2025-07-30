@@ -1,0 +1,676 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: Arial, sans-serif;
+    height: 100%;
+}
+
+/* Header */
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+    color: white;
+}
+
+header nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+
+/* Hero Section */
+.hero {
+    background: url('images/fundo.png') no-repeat center center/cover;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: flex-end; /* Alinha o conteúdo à direita */
+    align-items: center;
+    padding: 0 60px;
+    
+}
+
+
+.hero-content {
+    position: relative;
+    max-width: 400px;
+    z-index: 5;
+    color: white;
+    font-weight: bold;
+    text-align: right; /* Alinha o texto à direita */
+    margin-right: 20px; /* Ajusta a posição do texto */
+    
+    
+}
+
+.hero-content h1 {
+    font-size: 35px;
+    line-height: 1.5;
+}
+
+/* Login Button */
+.login-button {
+    background: #f56a00; /* Cor de fundo normal */
+    color: white;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;  /* Transição suave */
+    font-size: 18px;
+    margin-top: 20px; /* Adiciona distância entre o texto e o botão */
+}
+
+/* Cor quando o mouse passa sobre o botão */
+.login-button:hover {
+    background: #ff7f32; /* Cor mais suave no hover (um tom mais claro) */
+    cursor: pointer; 
+}
+
+/* Serviços*/
+.services {
+    padding: 80px 50px;
+    background: #ffffff;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 28px;
+    margin-bottom: -50px;
+    color: #1d3557;
+    font-weight: bold;
+}
+
+/* Container */
+.service-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+/* Container de cada serviço */
+.service {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0px; /* zero espaço entre elementos */
+}
+
+/* Ícone */
+.service img {
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+    display: block;
+    transform: translateY(35px); /* baixa o ícone 15px */
+    margin-bottom: -53px; /* compensa o padding invisível da imagem */
+}
+
+/* Texto */
+.service p {
+    margin: 0;
+    font-size: 13px;
+    color: #5e5e5e;
+    line-height: 1.5;
+    max-width: 260px;
+}
+
+/* Indicadores*/
+.indicators {
+    padding: 80px 50px;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.indicators h2 {
+    font-size: 28px;
+    margin-bottom: 40px;
+    color: #1d3557;
+    font-weight: bold;
+}
+
+.indicators-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 15px;  /* estava 30px, reduzimos */
+    justify-items: center;
+    max-width: 800px;
+    margin: 0 auto; /* centra o grid */
+}
+
+.indicator {
+    background: white;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Centralizar o último na linha de baixo */
+.indicator:last-child {
+    grid-column: 2 / span 1;
+}
+
+/* Imagem */
+.indicator img {
+    width: 100%;
+    height: auto;
+    max-height: 140px;
+    object-fit: contain;
+}
+
+/* Texto */
+.indicator p {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
+}
+
+/* Linha do tempo*/
+.timeline-section {
+    width: 100%;
+    padding: 50px 0;
+    position: relative;
+    background: #fff;
+}
+
+.timeline {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    background: #ccc; /* Cor da barra */
+    z-index: 0;
+}
+
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 20px 40px;
+    box-sizing: border-box;
+}
+
+.timeline-item.left {
+    left: 0;
+    text-align: right;
+}
+
+.timeline-item.right {
+    left: 50%;
+    text-align: left;
+}
+
+.timeline-item .circle {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1; /* Muito importante para ficar sobre a linha */
+}
+
+.timeline-item.left .circle {
+    right: -30px;
+}
+
+.timeline-item.right .circle {
+    left: -30px;
+}
+
+.timeline-item .circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.timeline-item h3 {
+    font-size: 18px;
+    color: #002147;
+    margin-bottom: 10px;
+}
+
+.timeline-item p {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 50px;
+        padding-right: 20px;
+    }
+
+    .timeline-item.left, .timeline-item.right {
+        left: 0 !important;
+        text-align: left;
+    }
+
+    .timeline-item .circle {
+        position: absolute;
+        left: 0;
+        margin-bottom: 10px;
+    }
+}
+/* Equipa */
+/* Equipa */
+.team-section {
+    background: #f9f9f9;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.team-section h2 {
+    font-size: 26px;
+    color: #002147;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(140px, 180px));
+    column-gap: 25px;
+    row-gap: 25px;
+    justify-content: center;
+    align-items: start;
+}
+
+.team-member {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px 20px 15px 20px; /* Ajuste o padding */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    height: auto; /* Deixe a altura automática */
+    transition: none; /* Remover qualquer transição */
+    box-shadow: none; /* Remover a sombra */
+}
+
+.team-member img {
+    height: 160px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    background: #ffffff;
+}
+
+.team-member p {
+    margin: 0;
+    text-align: center;
+    font-weight: 600;
+    color: #002147;
+    font-size: 15px;
+    line-height: 1.2;
+}
+
+/* Remover efeitos de hover completamente */
+.team-member:hover {
+    transform: none; /* Remove qualquer transformação no hover */
+    box-shadow: none; /* Remove qualquer sombra no hover */
+}
+
+.team-member:hover img {
+    transform: none; /* Garante que a imagem não tenha transformação no hover */
+    box-shadow: none; /* Remove qualquer sombra no hover */
+}
+
+.team-member:hover p {
+    color: #002147; /* Mantém a cor original do texto */
+}
+
+
+/* Responsivo */
+@media (max-width: 900px) {
+    .team-grid {
+        grid-template-columns: repeat(2, minmax(140px, 180px));
+        column-gap: 20px;
+        row-gap: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+        row-gap: 20px;
+    }
+}
+
+.contact-section {
+    background: #ffff;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 24px;
+    color: #002147;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.contact-form {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.form-left, .form-right {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-left {
+    flex: 1;
+    max-width: 400px;
+}
+
+.form-right {
+    flex: 1;
+    max-width: 450px;
+}
+
+/* Inputs e Textarea */
+.contact-form input, .contact-form textarea {
+    padding: 10px 15px;
+    border: none;
+    background: #f9f9f9;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Reduzindo altura da textarea para ficar proporcional */
+textarea {
+    height: 120px;
+    resize: none;
+}
+
+/* Botão */
+button {
+    align-self: flex-start;
+    padding: 10px 20px;
+    background: #002147;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+button:hover {
+    background: #1a4d91;
+}
+.contact-phone {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    color: #002147;
+    font-weight: bold;
+}
+
+.contact-phone i {
+    font-size: 18px;
+}
+.footer-info {
+    margin-top: 40px;
+    font-size: 12px;
+    color: #666;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-info a {
+    color: #002147;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.footer-info a:hover {
+    text-decoration: underline;
+}
+
+/* Modal Overlay */
+.login-modal {
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+/* Caixa */
+.login-box {
+    height: 400px; 
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 16px;
+    width: 400px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Título */
+.login-box h2 {
+    font-size: 28px;
+    color: #002147;
+    margin-bottom: 5px;
+}
+
+/* Linha decorativa */
+.login-line {
+    width: 80px;
+    height: 2px;
+    border: none;
+    background: linear-gradient(to right, #f5c542, #f5c542);
+    margin: 10px auto 25px auto; 
+}
+
+/* Subtítulo */
+.login-box p {
+    font-size: 18px;
+    color: #002147;
+    margin-bottom: 20px;
+}
+
+/* Inputs com ícones */
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.input-group i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #002147;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #002147;
+    border-radius: 8px;
+    outline: none;
+    font-size: 14px;
+}
+
+/* Botão */
+.login-submit {
+    width: 100%; /* Garante que o botão ocupe toda a largura disponível */
+    padding: 12px 0; /* Ajusta o padding para tornar o botão proporcional */
+    background: transparent;
+    color: #002147;
+    border: 1.5px solid #002147;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 20px; /* Espaço entre o botão e o campo anterior */
+}
+
+.login-submit:hover {
+    background: #002147;
+    color: white;
+}
+
+/* Botão fechar */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: #aaa;
+}
+
+.close-btn:hover {
+    color: #002147;
+}
+
+.hero-content {
+    position: relative;
+    max-width: 400px;
+    z-index: 5;
+    color: white;
+    font-weight: bold;
+    margin-left: 200px; 
+}
+
+
+/* ===== Conteúdo sem deslocar ===== */
+header, .hero, .services, .indicators, .timeline-section, .team-section, .contact-section {
+    margin-left: 0;
+}
+
+/* Responsivo opcional */
+@media (max-width: 768px) {
+ 
+    header, .hero, .services, .indicators, .timeline-section, .team-section, .contact-section {
+        margin-left: 0; /* Alinha todo o conteúdo à esquerda */
+    }
+
+    .hero-content {
+        margin-left: 20px; /* Ajuste fino só para o texto da secção hero */
+    }
+
+}
+.logo {
+    display: flex;
+    align-items: center;         /* alinha verticalmente ao centro */
+    gap: 20px;                   /* espaço entre imagem e texto */
+    margin-left: 20px;
+}
+
+.logo-img {
+    height: 140px;               /* como tu queres */
+    transform: scale(1.5);
+    transform-origin: left center;
+    object-fit: contain;
+}
+
+.logo-subtext {
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    white-space: nowrap;
+    line-height: 1.2;
+    margin-left: 60px; /*  AQUI empurras o texto para a direita */
+}
+
+/* Opcional: Hero Content */
+.hero-content {
+    margin-left: 80px; /* Ajuste fino para texto da hero não colidir */
+}
+
+.cta-banner {
+    background-color: #1d3557; /* ou #002147, conforme preferires */
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.cta-banner h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.cta-banner p {
+    font-size: 16px;
+}
+
+.cta-banner a {
+    color: #ffffff;
+    text-decoration: underline;
+    font-weight: bold;
+}
+

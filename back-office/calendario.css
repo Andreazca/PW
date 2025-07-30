@@ -1,0 +1,147 @@
+@import url('registoperitos.css');
+
+.main-content {
+    margin-left: 2%;          /* Remove o centramento */
+    padding: 20px;      /* Um pouco de respiro */
+    width: 100%;        /* Ocupa o espaço restante */
+    box-sizing: border-box;
+    margin-top: 2%;
+  }
+
+  .page-title{
+    font-size: 34px; /* Ajustando o tamanho da fonte */
+    color: #1E3A5F;
+    font-weight: bold;
+    max-width: 100%; /* Certificando-se de que o título ocupa a largura total */
+    padding: 20px;
+    text-align: left; /* Alinhando o título à esquerda */
+    margin-left: 0; /* Movendo o título mais para a esquerda */
+    padding-top: 40px;
+  }
+
+/* Estilo básico do calendário */
+.calendar {
+    width: 100%;
+    background-color: #e8e1d2;
+    max-height: 100%;
+}
+
+
+/* Cabeçalho */
+.calendar-header {
+    display: flex;
+    justify-content: center; /* centraliza tudo */
+    align-items: center;
+    gap: 1rem; /* espaçamento entre elementos */
+    background-color: #e8e1d2;
+    border-radius: 10px 10px 0 0;
+    position: relative;
+}
+
+#month-year {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1E3A5F;
+}
+
+/* Botões de navegação */
+button {
+    margin: 0;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #F3B300;
+    border: 1px solid #F3B300;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.rotate {
+    transform: rotate(180deg);
+}
+
+button:hover {
+    background-color: #e0a800;
+}
+
+/* Dias da semana */
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    padding: 10px 0;
+    font-weight: bold;
+    color: #1E3A5F;
+    text-align: center;
+}
+
+/* Células de data */
+.calendar-dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    column-gap: 30px; /* Espaçamento lateral */
+}
+
+.calendar-dates div {
+    display: flex;
+    justify-content: center;   /* Alinha à esquerda (ou usa center se quiseres centrado horizontalmente) */
+    align-items: flex-start;       /* Alinha ao topo */
+    margin: 8px;
+    height: 80px;
+    border-radius: 4px;
+    background-color: #7AA9EB;
+    color: black;
+    font-weight: bold;
+    font-size: 1rem;
+    position: relative;
+    padding: 6px; /* Dá um espacinho interno */
+}
+
+
+
+.other-month {
+    background-color: #7AA9EB; /* mesma cor do mês atual */
+    opacity: 0.25;
+    color: black;
+}
+
+  
+/* Estilos para o evento */
+.calendar-dates div.event {
+    display: flex;
+    flex-direction: column; /* Alinha a data e o nome do evento de forma vertical */
+    justify-content: flex-start; /* Alinha ao topo */
+    align-items: center; /* Centraliza horizontalmente */
+    height: 80pxpx;
+    margin: 8px;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.75);
+    color: black;
+    font-weight: bold;
+    font-size: 1rem;
+    position: relative;
+    padding: 6px;
+    border: 1px solid #97BAE9;
+  }
+  
+  /* Estilos para o nome do evento */
+  .calendar-dates div.event-label {
+    width: 90%;
+    height: 40px;
+    flex-shrink: 0;
+    background-color: rgba(243, 179, 0, 0.75);
+    border-radius: 5px;
+    color: #1E3A5F;
+    font-size: 11px;
+    font-style: normal;
+    margin-top: 7px; /* Adiciona espaço superior */
+    display: flex; /* Adicionado para usar flexbox */
+    justify-content: center; /* Alinha o conteúdo horizontalmente (centrado) */
+    align-items: center; /* Alinha o conteúdo verticalmente (centrado) */
+    text-align: center; /* Alinha o texto dentro da div (também horizontalmente) */
+  }
+  
+
+
+

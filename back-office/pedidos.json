@@ -1,0 +1,38 @@
+[
+    {
+      "id": 1,
+      "descricao": "Máquina avariada no setor A",
+      "cliente": "antonio@gmail.com",
+      "data": "2025-04-21",
+      "estado": "pendente"
+    },
+    {
+      "id": 2,
+      "descricao": "Problema elétrico na fiação",
+      "cliente": "pedro@gmail.com",
+      "data": "2025-04-23",
+      "estado": "pendente"
+    },
+    {
+      "id": 3,
+      "descricao": "Risco de incêndio na área de produção",
+      "cliente": "bernardo@gmail.com",
+      "data": "2025-04-24",
+      "estado": "pendente"
+    },
+    {
+      "id": 4,
+      "descricao": "Sistema de ventilação avariado",
+      "cliente": "francisco@gmail.com",
+      "data": "2025-04-25",
+      "estado": "pendente"
+    },
+    {
+      "id": 5,
+      "descricao": "Falha nos sensores de temperatura",
+      "cliente": "luisa@gmail.com",
+      "data": "2025-04-27",
+      "estado": "pendente"
+    }
+  ]
+  

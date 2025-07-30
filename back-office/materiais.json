@@ -1,0 +1,67 @@
+[
+    {
+      "id": 1,
+      "nome": "Spray Desinfetante",
+      "tipo": "Higiene",
+      "descricao": "Higienização de zonas de contacto com máquinas",
+      "stock": 200,
+      "preco": 10
+    },
+    {
+      "id": 2,
+      "nome": "Kit de Limpeza",
+      "tipo": "Higiene",
+      "descricao": "Pano de microfibra, escova fina e luvas descartáveis",
+      "stock": 900,
+      "preco": 25
+    },
+    {
+      "id": 3,
+      "nome": "Botas de Biqueira de Aço",
+      "tipo": "Segurança",
+      "descricao": "Calçado de proteção com biqueira reforçada",
+      "stock": 300,
+      "preco": 40
+    },
+    {
+      "id": 4,
+      "nome": "Kit de Primeiros Socorros",
+      "tipo": "Segurança",
+      "descricao": "Pensos rápidos, soro, máscara, algodão, álcool",
+      "stock": 150,
+      "preco": 30
+    },
+    {
+      "id": 5,
+      "nome": "Câmara Térmica",
+      "tipo": "Monitorização",
+      "descricao": "Deteta aquecimentos anormais nos motores",
+      "stock": 200,
+      "preco": 150
+    },
+    {
+      "id": 6,
+      "nome": "Termohigrómetro",
+      "tipo": "Monitorização",
+      "descricao": "Mede temperatura e humidade",
+      "stock": 130,
+      "preco": 60
+    },
+    {
+      "id": 7,
+      "nome": "Sensor de Temperatura",
+      "tipo": "Monitorização",
+      "descricao": "Monitoriza temperatura dos cilindros de secagem",
+      "stock": 500,
+      "preco": 45
+    },
+    {
+      "id": 8,
+      "nome": "Sensor de Quebra de Fio",
+      "tipo": "Monitorização",
+      "descricao": "Deteta quebra de fio ou paragem",
+      "stock": 50,
+      "preco": 55
+    }
+  ]
+  

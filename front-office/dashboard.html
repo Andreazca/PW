@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+
+<body>
+  <header class="dashboard-header">
+    <div class="logo">EyesEverywhere</div>
+    <nav>
+      <a href="landingpage.html">Página Inicial</a>
+      <a href="#">Relatórios</a>
+      <button onclick="logout()" class="logout-button">Logout</button>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Bem-Vindo | Painel Controlo</h1>
+    <div class="dashboard-buttons">
+      <button onclick="openOccurrenceModal()">Submeter Ocorrência</button>
+      <button onclick="showOccurrenceView()">Visualizar Ocorrências</button>
+    </div>
+  </main>
+
+  <!-- Seção de Visualização de Ocorrências -->
+  <section class="occurrence-view" id="occurrenceView" style="display: none; flex-direction: column; align-items: center;">
+    <h2>Visualizar Ocorrências</h2>
+    <div class="filter-buttons">
+      <button onclick="filterOccurrences('aceite')">ACEITE</button>
+      <button onclick="filterOccurrences('recusado')">RECUSADO</button>
+      <button onclick="filterOccurrences('pendente')">PENDENTE</button>
+    </div>
+    <div class="occurrence-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Descrição</th>
+            <th>Responsável</th>
+            <th>Data</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody id="occurrenceBody"></tbody>
+      </table>
+      <div class="pagination">
+        <button>&lt;</button>
+        <button>1</button>
+        <button class="active">2</button>
+        <button>3</button>
+        <span>...</span>
+        <button>40</button>
+        <button>&gt;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div class="occurrence-modal" id="occurrenceModal">
+    <div class="occurrence-box">
+      <button class="close-btn" onclick="closeOccurrenceModal()">×</button>
+      <h2>Submeter Ocorrência</h2>
+      <div class="occurrence-grid">
+        <div class="occurrence-left">
+          <input type="text" placeholder="Tipo de problema" />
+          <input type="text" placeholder="Local (Morada + Código Postal)" />
+          <input type="text" placeholder="Telemóvel" />
+          <input type="email" placeholder="Email" />
+        </div>
+        <div class="occurrence-right">
+          <textarea placeholder="Descrição, imagens e documentos anexos."></textarea>
+          <input type="file" id="fileInput" name="file" class="file-upload" />
+          <label for="fileInput" class="file-upload-label"> 📎 Anexar ficheiro</label>
+        </div>
+      </div>
+      <button class="submit-occurrence" onclick="submitOccurrence()">SUBMETER</button>
+    </div>
+  </div>
+
+  <!-- Link para o JavaScript Externo -->
+  <script src="dashboard.js"></script>
+</body>
+
+</html>

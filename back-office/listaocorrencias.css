@@ -1,0 +1,62 @@
+@import url('registoperitos.css');
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+th, td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
+
+thead {
+  background-color: #f9b300;
+  color: #1a3d63;
+}
+
+tr:hover {
+  background-color: #f0f6fc;
+}
+
+.registo {
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.registo.aprovado {
+  background-color: #d6f5d6;
+  color: #1b661b;
+  border: 1px solid #1b661b;
+}
+
+.registo.rejeitado {
+  background-color: #ffd6d6;
+  color: #b00000;
+  border: 1px solid #b00000;
+}
+
+.pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.pagination button {
+  padding: 8px 12px;
+  border: none;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.pagination button.active {
+  background-color: #1a3d63;
+  color: white;
+}
