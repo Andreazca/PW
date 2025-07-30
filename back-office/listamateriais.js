@@ -77,21 +77,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Usa localStorage se existir, senão carrega do ficheiro
   const local = localStorage.getItem("materiais");
+  let dados = [];
+
   if (local) {
-    const dados = JSON.parse(local);
+    try {
+      dados = JSON.parse(local);
+    } catch (e) {
+      console.warn("Erro ao ler localStorage, limpando...");
+      localStorage.removeItem("materiais");
+    }
+  }
+
+  if (Array.isArray(dados) && dados.length > 0) {
     renderTabela(dados);
   } else {
     fetch("materiais.json")
-      .then(response => response.json())
-      .then(data => {
-        renderTabela(data);
-        localStorage.setItem("materiais", JSON.stringify(data));
-      })
-      .catch(error => {
-        console.error("Erro ao carregar materiais.json:", error);
-        tabela.innerHTML = `<tr><td colspan="6">Erro ao carregar dados.</td></tr>`;
-      });
+        .then(response => response.json())
+        .then(data => {
+          renderTabela(data);
+          localStorage.setItem("materiais", JSON.stringify(data));
+        })
+        .catch(error => {
+          console.error("Erro ao carregar materiais.json:", error);
+          tabela.innerHTML = `<tr><td colspan="6">Erro ao carregar dados.</td></tr>`;
+        });
   }
+
 
   // Atualiza a tabela se o localStorage mudar (ex: após criar auditoria ou finalizar)
   window.addEventListener("storage", function (e) {
